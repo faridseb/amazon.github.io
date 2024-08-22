@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,600;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    box-shadow: 0 2px 3px rgb(155, 146, 146);
+    position: sticky;
+    top: 0;
+    background-color: white;
+
+}
+
+header .navbars{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header .navbars .logo{
+    font-size: 30px;
+    margin: 15px 5px;
+    font-weight: bold;
+}
+header .navbars span{
+    color: blue;
+}
+
+header .navbars .navlinks ul{
+    display: flex;
+}
+
+header .navbars .navlinks ul li{
+    margin: 30px 45px 20px 50px;
+    display: flex;
+}
+
+header .navbars .navlinks ul li i{
+    margin-right: 10px;
+}
+header .navbars .navlinks ul li:hover .sous-menu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(185, 185, 185);
+    box-shadow: 0 2px 6px black;
+    border-radius: 5px;
+}
+
+header .navbars .navlinks ul li .sous-menu,header .navbars .navlinks ul li .sous-menu1{
+    display: none;
+}
+
+header .navbars .navlinks ul li .sous-menu1 li{
+    border-bottom: 1px black solid;
+}
+
+header .navbars .navlinks ul li:hover .sous-menu1{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 58px;
+    right: 10px;
+    background-color: rgb(185, 185, 185);
+}
+
+
+header .navbars .navlinks ul li a:hover{
+    color: blue;
+    border-bottom: blue 2px solid;
+    transition: .1s;
+}
+header .navbars .navlinks ul li .fa-bag-shopping:hover , header .cart .fa-xmark:hover ,.fa-magnifying-glass:hover{
+    color: rgba(0, 0, 0,0.3);
+}
+header .navbars .navlinks ul li i{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+header .navbars .navlinks ul li .fa-bag-shopping,.fa-user{
+    margin-top: 2px;
+}
+
+header .search{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .2s;
+}
+header .search .fa-xmark:hover{
+    color: rgba(255, 255, 255,0.4);
+}
+header .search.searches{
+    top: 0;
+}
+header .search input{
+    padding: 10px 50px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 20px;
+}
+header .search input::placeholder{
+    color: white;
+}
+
+header .search  .fa-magnifying-glass{
+    color: white;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+header .search .fa-xmark{
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 55px;
+    right: 65px;
+    cursor: pointer;
+}
+header .navbars .navlinks ul li .fa-magnifying-glass{
+    
+    padding: 4px;
+    border-radius: 50%;
+}
+
+
+header .cart{
+    background-color: rgb(181, 181, 181);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 400px;
+    box-shadow: 0 4px 16px black;
+    right: -100%;
+    transition: all ease .2s;
+    overflow: auto;
+}
+
+header .cart.active{
+    right: 0;
+}
+header .cart h2{
+    text-align: center;
+    margin-top: 10px ;
+    border-bottom: 2px black solid;
+    width: 50%;
+    margin: auto;
+    
+
+}
+
+header .cart .fa-xmark{
+    font-size: 32px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
+}
+
+header .cart .cartcontent .cart-box{
+    display: grid;
+    grid-template-columns: 45% 30% 25%;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 20px;
+    
+    padding: 5px;
+    width: 90%;
+    margin: auto;
+}
+
+header .cart .cartcontent .cart-box img{
+    width: 50%;
+}
+
+header .cart .cartcontent .cart-box input{
+    width: 40%;
+    padding: 5px;
+    border-radius: 2px;
+    border: 1px solid black;
+    outline-color: blue;
+    cursor: pointer;
+}
+
+header .cart .cartcontent .cart-box .fa-trash{
+    margin-left: 30px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+header .cart  .total{
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin: 10px auto ;
+}
+
+header .cart  .total .total-title{
+    margin-right: 40px;
+}
+
+header .cart  .total .total-price{
+    margin-right: 10px;
+}
+header .cart .btn{
+    text-align: center;
+}
+header .cart .btn button{
+    padding: 15px 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+header .cart .btn button:hover{
+    background-color: blue;
+    color: white;
+    border: none;
+    scale: 1.1;
+    transition: all ease .2s;
+}
+.first{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.first .cole1 h1{
+    font-size: 50px;
+}
+
+.first .cole1 button{
+    background-color: black;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 40px;
+    color: white;
+    margin: 10px 10px;
+}
+
+.first .cole1 button a{
+    color: white;
+}
+.first .cole1 button:hover{
+    background-color: blue;
+    cursor: pointer;
+    scale: 1.1;
+    transition: all ease .2s;
+}
+.first .cole1 button i{
+    color: white;
+}
+.first .cole1 h1{
+    margin: 100px 0 0 10px;
+}
+.first .cole1 p{
+    margin: 0 0 0 10px;
+}
+.first img{
+    width: 80%;
+    margin-left: 120px;
+}
+.popul h2{
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 50%;
+    margin: auto;
+}
+.populaire{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.populaire .box{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px black;
+    background-color: rgb(239, 239, 239);
+    cursor: pointer;
+}
+.populaire .box:hover{
+    border: 2px solid blue;
+    padding: 10px;
+    transition: .2s;
+}
+.populaire .box img{
+    width: 70%;
+    height: 240px;
+}
+
+.populaire .box button{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:7px;
+    cursor: pointer;
+}
+
+.populaire .box button:hover{
+    background-color: blue;
+    color: white;
+    transition: .3s;
+}
+
+
+.partenaire{
+    display: grid;
+    grid-template-columns:repeat(4,1fr) ;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+.partenaire .box{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px black;
+    background-color: rgb(239, 239, 239);
+    cursor: pointer;
+}
+
+.partenaire .box:hover{
+    border: 2px solid blue;
+    padding: 10px;
+    transition: .3s;
+}
+.partenaire .box img{
+    width: 100%;
+    height: 240px;
+}
+
+
+.partenaire .box button{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:7px;
+    cursor: pointer;
+}
+
+.partenaire .box button:hover{
+    background-color: blue;
+    color: white;
+    transition: .2s;
+}
+
+.second h2{
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 50%;
+    margin: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: black;
+    padding: 20px;
+}
+
+footer h3{
+    color: white;
+    border-bottom: 2px white solid;
+    width: 100%;
+}
+
+footer i{
+    color: white;
+    font-size: 25px;
+}
+
+
+footer .sec1 a ,.sec2 a{
+    color: white;
+}
+
+footer .sec3 ul{
+    display: flex;
+}
+
+footer .sec3 ul li{
+    margin: 10px 20px;
+}
+header .navbars .fa-house,.fa-futbol,.fa-phone, .fa-bars,#Open ,#icon2{
+    display: none;
+}
+
+.login{
+    padding:10px 25px ;
+    display: none;
+}
+
+#icones{
+    display: none;
+}
+
+header .navbars #Open{
+    display: none;
+}
+
+header .navbars .navlinks ul li #Open{
+    display: block;
+}
+
+.swiper{
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px black;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,.swiper-button-prev{
+    color: aliceblue;
+    width: 100px;
+}
+
+@media screen and (max-width : 900px){
+    header{
+        position: relative;
+        z-index: 2;
+        position: sticky;
+        top: 0;
+    }
+
+    header .navbars .navlinks{
+        display: flex;
+        position: absolute;
+        background-color: rgb(181, 181, 181);
+        height: 500px;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        position: fixed;
+        margin-left: 0%;
+        transition: all ease .2s;
+        align-items: center;
+        justify-content: center;
+        top: -100%;
+    }
+    header  .navbars .navlinks ul li{
+        padding-bottom:10px ;
+    }
+    
+
+    header .search  .fa-magnifying-glass{
+        color: white;
+        margin-bottom: 40px;
+    }
+    header .navbars  .fa-magnifying-glass:hover{
+        
+        color: rgba(0, 0, 0,0.3);
+    
+    }
+
+    .populaire .box{
+        height: 250px;
+    }
+
+    .populaire .box img{
+        width: 50%;
+        height: 130px;
+    }
+
+    .partenaire .box{
+        height: 250px;
+    }
+
+    .partenaire .box img{
+        width: 50%;
+        height: 130px;
+    }
+
+
+    header .navbars .navlinks.open{
+        top: 0;
+    }
+
+    header .navbars .navlinks ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .first{
+        display: block;
+    }
+    .first img{
+        width: 80%;
+        margin-left: 90px;
+    }
+    header .fa-magnifying-glass,.fa-bag-shopping ,.fa-bars ,#icon2{
+        display: block;
+        font-size: 30px;
+        position: relative;
+        top: 23px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .populaire{
+        display: grid ;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+        max-width: 1100px;
+        margin: 50px auto;
+    }
+    .partenaire{
+        display: grid;
+        grid-template-columns:repeat(2,1fr) ;
+        gap: 30px;
+        max-width: 500px;
+        margin: 50px auto;
+    }
+    
+    header  .navbars .navlinks ul li  #football , #maison , #phone{
+        display: block;
+    }
+
+    header .navbars .navlinks ul li .fa-magnifying-glass , .fa-bag-shopping,.fa-user{
+        display: none;
+    }
+
+    header .navbars .navlinks ul li:hover .sous-menu1{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 460px;
+        right: 0px;
+        background-color: rgb(185, 185, 185);
+        width: 260px;
+        height: 140px;
+        margin: auto;
+        
+    }
+    
+    #Open:hover ,#icones2:hover{
+    color: rgba(0, 0, 0,0.3);
+    }
+    
+    #icones{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right:10px;    
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .sous-menu{
+        z-index: 100;
+    }
+    .login{
+        display: block;
+        border: 1px solid black;
+        bottom: 150px ;
+    }
+
+
+    header .navbars #Open{
+        display: block;
+    }
+    footer{
+        display: block;
+    }
+
+    
+}
