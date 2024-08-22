@@ -97,7 +97,7 @@ header .search{
     background-color: rgba(0, 0, 0, 0.7);
     height: 100vh;
     position: fixed;
-    top: -100%;
+    top: -200%;
     left: 0;
     width: 100%;
     display: flex;
@@ -467,7 +467,7 @@ header .navbars .navlinks ul li #Open{
         transition: all ease .2s;
         align-items: center;
         justify-content: center;
-        top: -200%;
+        top: -100%;
     }
     header  .navbars .navlinks ul li{
         padding-bottom:10px ;
