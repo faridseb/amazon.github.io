@@ -473,6 +473,9 @@ header .navbars .navlinks ul li #Open{
         padding-bottom:10px ;
     }
     
+    header .search input{
+        width: 50%;
+    }
 
     header .search  .fa-magnifying-glass{
         color: white;
