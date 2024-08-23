@@ -518,7 +518,7 @@ header .navbars .navlinks ul li #Open{
     }
 
     .populaire .box{
-        height: 250px;
+        height: 290px;
     }
 
     .populaire .box img{
@@ -527,7 +527,7 @@ header .navbars .navlinks ul li #Open{
     }
 
     .partenaire .box{
-        height: 250px;
+        height: 265px;
     }
 
     .partenaire .box img{
@@ -589,18 +589,7 @@ header .navbars .navlinks ul li #Open{
         display: none;
     }
 
-    header .navbars .navlinks ul li:hover .sous-menu1{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 460px;
-        right: 0px;
-        background-color: rgb(185, 185, 185);
-        width: 260px;
-        height: 140px;
-        margin: auto;
-        
-    }
+    
     
     #Open:hover ,#icones2:hover ,#icones:hover{
     color: rgba(229, 220, 220, 0.3);
