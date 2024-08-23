@@ -82,6 +82,8 @@ header .navbars .navlinks ul li{
     color: black;
 }
 
+
+
 .dropdown-item:hover{
     background-color: #007bff;
 }
@@ -161,7 +163,7 @@ header .search .fa-xmark{
 
 
 header .cart{
-    background-color: rgb(181, 181, 181);
+    background-color: rgb(255, 255, 255);
     position: fixed;
     top: 0;
     height: 100vh;
@@ -243,15 +245,14 @@ header .cart  .total .total-title{
 header .cart  .total .total-price{
     margin-right: 10px;
 }
-header .cart .btn{
-    text-align: center;
-}
+
 header .cart .btn button{
     padding: 15px 30px;
-    text-align: center;
+    margin-left: 130px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
+
 }
 header .cart .btn button:hover{
     background-color: blue;
@@ -323,7 +324,7 @@ header .cart .btn button:hover{
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 2px 10px black;
-    background-color: rgb(239, 239, 239);
+   /* background-color: rgb(239, 239, 239);*/
     cursor: pointer;
 }
 .populaire .box:hover{
@@ -364,7 +365,7 @@ header .cart .btn button:hover{
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 2px 10px black;
-    background-color: rgb(239, 239, 239);
+    /*background-color: rgb(239, 239, 239);*/
     cursor: pointer;
 }
 
@@ -468,7 +469,7 @@ header .navbars .navlinks ul li #Open{
     header .navbars .navlinks{
         display: flex;
         position: absolute;
-        background-color: rgb(105, 100, 100);
+        background-color: rgb(0, 0, 0);
         height: 100vh;
         width: 100%;
         text-align: center;
