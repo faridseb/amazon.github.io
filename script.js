@@ -74,14 +74,17 @@ function ready(){
         inputs.addEventListener('change',quantitychange);
     }
 
-    updatotal()
+    updatotal();
+    loadCartitems();
 }
 
 
 function removeitem(event){
     var buttonclicked = event.target ;
     buttonclicked.parentElement.remove();
-    updatotal()
+    updatotal();
+    saveCartitems()
+    updateCarticon();
 }
 
 function quantitychange(event){
@@ -90,6 +93,8 @@ function quantitychange(event){
         input.value = 1
     }
     updatotal() ;
+    saveCartitems();
+    updateCarticon();
 }
 
 function addcartclick(event){
@@ -102,6 +107,8 @@ function addcartclick(event){
     
     addCartToHTML(title,price,productimg);
     updatotal() ;
+    saveCartitems();
+    updateCarticon()
 }
 
 
@@ -119,7 +126,7 @@ function addCartToHTML(title,price,productimg){
         
     }
     
-    var cartshopcontent = ` <img src="${productimg}" alt="" class="">
+    var cartshopcontent = ` <img src="${productimg}" alt="" class="imagez">
     <div class="details-box">
         <div class="title">${title}</div>
         <div class="price">${price}</div>
@@ -132,6 +139,8 @@ function addCartToHTML(title,price,productimg){
 
     cartboxShop.getElementsByClassName('fa-trash')[0].addEventListener('click',removeitem);
     cartboxShop.getElementsByClassName('quantity')[0].addEventListener('change',quantitychange);
+    updateCarticon();
+    saveCartitems()
 
 }
 
@@ -150,4 +159,69 @@ function updatotal(){
         total += quantity*price ;
     }
     document.getElementsByClassName('total-price')[0].innerText = total ;
+    localStorage.setItem('cartTotal',total)
 }
+
+function saveCartitems(){
+    var cartcontent = document.getElementsByClassName('cartcontent')[0];
+    var cartboxes = cartcontent.getElementsByClassName('cart-box');
+    var cartItems = [];
+
+    for(var i=0 ; i< cartboxes.length ; i++){
+        var cartbox = cartboxes[i];
+        var titleElement = cartbox.getElementsByClassName('title')[0];
+        var priceElement = cart.getElementsByClassName('price')[0];
+        var quantityElement = cartbox.getElementsByClassName('quantity')[0];
+        var productimg = cartbox.getElementsByClassName('imagez')[0].src;
+    
+    
+    var items = {
+        title : titleElement.innerText,
+        price : priceElement.innerText,
+        quantity : quantityElement.value,
+        productimg : productimg,
+    };
+
+    cartItems.push(items);
+    }
+    localStorage.setItem('cartItems',JSON.stringify(cartItems));
+}
+
+function loadCartitems(){
+    var cartItems = localStorage.getItem('cartItems');
+    if(cartItems){
+        cartItems = JSON.parse(cartItems);
+    
+
+    for(var i =0 ; i<cartItems.length ; i++){
+        var item = cartItems[i];
+        addCartToHTML(item.title, item.price ,item.productimg);
+
+        var cartboxes = document.getElementsByClassName('cart-box');
+        var cartbox = cartboxes[cartboxes.length -1];
+        var quantityElement = cartbox.getElementsByClassName('quantity')[0];
+        quantityElement.value = item.quantity ;
+        }
+    }
+    var cartTotal = localStorage.getItem('cartTotal');
+    if(cartTotal){
+        document.getElementsByClassName('total-price')[0].innerText = cartTotal ;
+    }
+
+    updatotal();
+}
+
+function updateCarticon(){
+    var cartboxes = document.getElementsByClassName('cart-box');
+    var quantity = 0 ;
+    for(var i=0 ; i<cartboxes.length ;i++){
+        var cartbox = cartboxes[i];
+        var quantityElement = cartbox.getElementsByClassName('quantity')[0];
+        quantity += parseInt(quantityElement.value);
+    }
+    var carticon = document.querySelector(".fa-bag-shopping");
+    var carticon1 = document.querySelector('#Open');
+    carticon.setAttribute('data-quantity',quantity);
+    carticon1.setAttribute('data-quantity',quantity)
+}
+    

@@ -19,12 +19,15 @@ header{
     position: sticky;
     top: 0;
     background-color: white;
+    
 
 }
 
 header .navbars{
     display: flex;
     justify-content: space-between;
+    max-width: 1300px;
+    margin: auto;
 }
 
 
@@ -33,60 +36,74 @@ header .navbars .logo{
     margin: 15px 5px;
     font-weight: bold;
 }
+#Open[data-quantity="0"]::after ,.fa-bag-shopping[data-quantity="0"]::after{
+    contain: '';
+}
+.fa-bag-shopping{
+    position: relative;
+}
+#Open[data-quantity="0"]::after, .fa-bag-shopping[data-quantity]::after{
+    content: attr(data-quantity);
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    background-color:  #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
 header .navbars span{
     color: blue;
 }
 
 header .navbars .navlinks ul{
     display: flex;
+    margin-right: 75px;
 }
 
 header .navbars .navlinks ul li{
-    margin: 30px 45px 20px 50px;
+    margin: 30px 60px 20px 30px;
     display: flex;
 }
 
-header .navbars .navlinks ul li i{
-    margin-right: 10px;
-}
-header .navbars .navlinks ul li:hover .sous-menu{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: rgb(185, 185, 185);
-    box-shadow: 0 2px 6px black;
-    border-radius: 5px;
-}
 
-header .navbars .navlinks ul li .sous-menu,header .navbars .navlinks ul li .sous-menu1{
+
+#show{
     display: none;
 }
-
-header .navbars .navlinks ul li .sous-menu1 li{
-    border-bottom: 1px black solid;
+.dropdown-item{
+    text-decoration: none;
+    color: black;
 }
 
-header .navbars .navlinks ul li:hover .sous-menu1{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 58px;
-    right: 10px;
-    background-color: rgb(185, 185, 185);
+.dropdown-item:hover{
+    background-color: #007bff;
 }
 
-
-header .navbars .navlinks ul li a:hover{
-    color: blue;
-    border-bottom: blue 2px solid;
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
     transition: .1s;
+    text-decoration: none;
+}
+
+.fa-user{
+    color: white;
 }
 header .navbars .navlinks ul li .fa-bag-shopping:hover , header .cart .fa-xmark:hover ,.fa-magnifying-glass:hover{
     color: rgba(0, 0, 0,0.3);
 }
 header .navbars .navlinks ul li i{
     cursor: pointer;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 header .navbars .navlinks ul li .fa-bag-shopping,.fa-user{
@@ -129,6 +146,10 @@ header .search  .fa-magnifying-glass{
     margin-bottom: 5px;
     font-size: 30px;
 }
+
+header .search  .fa-magnifying-glass:hover{
+    color: rgba(255, 255, 255,0.4);
+}
 header .search .fa-xmark{
     color: white;
     font-size: 40px;
@@ -136,11 +157,6 @@ header .search .fa-xmark{
     top: 55px;
     right: 65px;
     cursor: pointer;
-}
-header .navbars .navlinks ul li .fa-magnifying-glass{
-    
-    padding: 4px;
-    border-radius: 50%;
 }
 
 
@@ -151,7 +167,7 @@ header .cart{
     height: 100vh;
     width: 400px;
     box-shadow: 0 4px 16px black;
-    right: -100%;
+    right: -200%;
     transition: all ease .2s;
     overflow: auto;
 }
@@ -208,6 +224,9 @@ header .cart .cartcontent .cart-box .fa-trash{
     font-size: 23px;
     cursor: pointer;
 }
+header .cart .cartcontent .cart-box .fa-trash:hover{
+    color: rgb(254, 80, 80);
+}
 
 header .cart  .total{
     border-top: 2px solid black;
@@ -248,6 +267,7 @@ header .cart .btn button:hover{
 
 .first .cole1 h1{
     font-size: 50px;
+    font-weight: bold;
 }
 
 .first .cole1 button{
@@ -281,7 +301,10 @@ header .cart .btn button:hover{
     width: 80%;
     margin-left: 120px;
 }
-.popul h2{
+.popul{
+    margin-top: 50px;
+}
+.popul h2 , .carousel h2 ,.second h2{
     text-align: center;
     border-bottom: 2px solid black;
     width: 50%;
@@ -292,7 +315,7 @@ header .cart .btn button:hover{
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
 }
 .populaire .box{
     text-align: center;
@@ -369,13 +392,10 @@ header .cart .btn button:hover{
     color: white;
     transition: .2s;
 }
-
-.second h2{
-    text-align: center;
-    border-bottom: 2px solid black;
-    width: 50%;
-    margin: auto;
+.second{
+    margin-top: 50px;
 }
+
 
 footer{
     display: flex;
@@ -428,25 +448,16 @@ header .navbars #Open{
 header .navbars .navlinks ul li #Open{
     display: block;
 }
+.carousel{
+    margin-top: 70px;
+}
 
-.swiper{
-    height: 600px;
+.carousel-inner{
     border-radius: 15px;
-    box-shadow: 0 5px 15px black;
-}
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.swiper-button-next,.swiper-button-prev{
-    color: aliceblue;
-    width: 100px;
 }
 
 @media screen and (max-width : 900px){
+    
     header{
         position: relative;
         z-index: 2;
@@ -457,8 +468,8 @@ header .navbars .navlinks ul li #Open{
     header .navbars .navlinks{
         display: flex;
         position: absolute;
-        background-color: rgb(181, 181, 181);
-        height: 500px;
+        background-color: rgb(105, 100, 100);
+        height: 100vh;
         width: 100%;
         text-align: center;
         z-index: 100;
@@ -466,17 +477,36 @@ header .navbars .navlinks ul li #Open{
         margin-left: 0%;
         transition: all ease .2s;
         align-items: center;
-        justify-content: center;
-        top: -100%;
+        
+        right: -200%;
     }
     header  .navbars .navlinks ul li{
         padding-bottom:10px ;
     }
-    
+    #texte{
+        color: white;
+    }
+    header  .navbars .navlinks ul li i{
+        margin-right: 25px;
+        color: white;
+    }
     header .search input{
         width: 50%;
     }
+    .dropdown-item {
+        color: black;
+    }
+    #show{
+        display: block;
+    }
+    #show2{
+        display: none;
+    }
+    
 
+    .item{
+        display: none;
+    }
     header .search  .fa-magnifying-glass{
         color: white;
         margin-bottom: 40px;
@@ -507,7 +537,7 @@ header .navbars .navlinks ul li #Open{
 
 
     header .navbars .navlinks.open{
-        top: 0;
+        right: 0;
     }
 
     header .navbars .navlinks ul{
@@ -532,6 +562,10 @@ header .navbars .navlinks ul li #Open{
         right: 10px;
         cursor: pointer;
     }
+    .fa-futbol{
+        display: inline;
+    }
+
     .populaire{
         display: grid ;
         grid-template-columns: repeat(2,1fr);
@@ -551,7 +585,7 @@ header .navbars .navlinks ul li #Open{
         display: block;
     }
 
-    header .navbars .navlinks ul li .fa-magnifying-glass , .fa-bag-shopping,.fa-user{
+    header .navbars .navlinks ul li .fa-magnifying-glass , .fa-bag-shopping{
         display: none;
     }
 
@@ -568,8 +602,8 @@ header .navbars .navlinks ul li #Open{
         
     }
     
-    #Open:hover ,#icones2:hover{
-    color: rgba(0, 0, 0,0.3);
+    #Open:hover ,#icones2:hover ,#icones:hover{
+    color: rgba(229, 220, 220, 0.3);
     }
     
     #icones{
@@ -579,6 +613,7 @@ header .navbars .navlinks ul li #Open{
         right:10px;    
         font-size: 25px;
         cursor: pointer;
+        color: white;
     }
     .sous-menu{
         z-index: 100;
