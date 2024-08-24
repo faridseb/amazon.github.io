@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,600;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(20230901-slider-header-Blog-Mooiste-Voetbalshirts2324.webp);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(30px);
+}
+
+.container{
+    width: 450px;
+}
+
+.container .box{
+    margin: 10px 0;
+    color: white;
+}
+
+.container .box input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    outline-color: #007bff;
+    text-align: center;
+}
+
+.container .box input::placeholder{
+    text-align: center;
+}
+.container .box1{
+    margin: 20px 0;
+}
+.container .box1 input{
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    border: 1px black solid;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+}
+.container .box1 input:hover{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    scale: 1.1;
+    transition: .2s;
+}
+
+
+.container h2{
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.container p{
+    margin-left: 10px ;
+    color: white;
+}
+
+.container p a:hover{
+    color: red;
+}
+
+@media screen and (max-width : 900px) {
+    .container {
+        width: 340px;
+    }
+    
+    .container h2{
+        font-size: 35px;
+    }
+
+
+.container p{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+}

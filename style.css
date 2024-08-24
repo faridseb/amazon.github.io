@@ -72,7 +72,10 @@ header .navbars .navlinks ul li{
     display: flex;
 }
 
-
+header .navbars .navlinks .droit{
+    display: none;
+    color: white;
+}
 
 #show{
     display: none;
@@ -87,7 +90,10 @@ header .navbars .navlinks ul li{
 .dropdown-item:hover{
     background-color: #007bff;
 }
-
+.PL{
+    width: 10%;
+    margin-right: 5px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -213,7 +219,7 @@ header .cart .cartcontent .cart-box img{
 }
 
 header .cart .cartcontent .cart-box input{
-    width: 40%;
+    width: 50%;
     padding: 5px;
     border-radius: 2px;
     border: 1px solid black;
@@ -398,7 +404,7 @@ header .cart .btn button:hover{
 }
 
 
-footer{
+footer .fin{
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -418,8 +424,13 @@ footer i{
 }
 
 
+
 footer .sec1 a ,.sec2 a{
     color: white;
+}
+
+footer .sec1 a:hover ,.sec2 a:hover, footer i:hover{
+    color: blue;
 }
 
 footer .sec3 ul{
@@ -428,6 +439,14 @@ footer .sec3 ul{
 
 footer .sec3 ul li{
     margin: 10px 20px;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-top: 1px solid white;
 }
 header .navbars .fa-house,.fa-futbol,.fa-phone, .fa-bars,#Open ,#icon2{
     display: none;
@@ -458,7 +477,9 @@ header .navbars .navlinks ul li #Open{
 }
 
 @media screen and (max-width : 900px){
-    
+    *{
+        font-size: 14px;
+    }
     header{
         position: relative;
         z-index: 2;
@@ -478,12 +499,22 @@ header .navbars .navlinks ul li #Open{
         margin-left: 0%;
         transition: all ease .2s;
         align-items: center;
-        
         right: -200%;
+    }
+    
+    header .navbars .logo span{
+        font-size: 30px;
     }
     header  .navbars .navlinks ul li{
         padding-bottom:10px ;
     }
+    header .navbars .navlinks .droit{
+        display: block;
+        color: white;
+        text-align: center;
+        margin-left: 50px;
+    }
+    
     #texte{
         color: white;
     }
@@ -496,6 +527,12 @@ header .navbars .navlinks ul li #Open{
     }
     .dropdown-item {
         color: black;
+    }
+    header .navlinks .dropdown-item .fa-right-to-bracket , header .navlinks .dropdown-item  .fa-plus{
+        color: black;
+    }
+    .PL{
+        width: 10%;
     }
     #show{
         display: block;
@@ -570,14 +607,14 @@ header .navbars .navlinks ul li #Open{
     .populaire{
         display: grid ;
         grid-template-columns: repeat(2,1fr);
-        gap: 30px;
-        max-width: 1100px;
+        gap: 10px;
+        max-width: 800px;
         margin: 50px auto;
     }
     .partenaire{
         display: grid;
         grid-template-columns:repeat(2,1fr) ;
-        gap: 30px;
+        gap: 10px;
         max-width: 500px;
         margin: 50px auto;
     }
@@ -599,8 +636,8 @@ header .navbars .navlinks ul li #Open{
     #icones{
         display: block;
         position: absolute;
-        top: 5px;
-        right:10px;    
+        top: 18px;
+        right:20px;    
         font-size: 25px;
         cursor: pointer;
         color: white;
@@ -618,9 +655,10 @@ header .navbars .navlinks ul li #Open{
     header .navbars #Open{
         display: block;
     }
-    footer{
+    footer .fin{
         display: block;
     }
+
 
     
 }
