@@ -562,7 +562,7 @@ header .navbars .navlinks ul li #Open{
 
 @media screen and (max-width : 900px){
     *{
-        font-size: 14px;
+        font-size: 12px;
     }
     header{
         position: relative;
@@ -639,9 +639,9 @@ header .navbars .navlinks ul li #Open{
         color: rgba(0, 0, 0,0.3);
     
     }
-
+    
     .populaire .box{
-        height: 290px;
+        height: 260px;
     }
 
     .populaire .box img{
@@ -693,27 +693,31 @@ header .navbars .navlinks ul li #Open{
         display: grid ;
         grid-template-columns: repeat(2,1fr);
         gap: 10px;
-        max-width: 800px;
+        max-width: 450px;
         margin: 50px auto;
     }
     .partenaire{
         display: grid;
         grid-template-columns:repeat(2,1fr) ;
         gap: 10px;
-        max-width: 500px;
+        max-width: 450px;
         margin: 50px auto;
     }
 
     .informations{
         display: block;
-        
     }
 
     .informations .infos{
-        margin: 10px 0;
-        width: 100%;
+        margin: 20px auto;
+        width: 80%;
     }
-    
+
+    .carousel{
+        width: 90%;
+        margin: 30px auto;
+    }
+
     header  .navbars .navlinks ul li  #football , #maison , #phone{
         display: block;
     }
