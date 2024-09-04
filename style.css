@@ -7,27 +7,30 @@
     list-style: none;
     text-decoration: none;
     color: black;
+    
 }
 
 
+body{
+    max-width: 1500px;
+    margin: auto;
+}
 html{
     scroll-behavior: smooth;
 }
 
 header{
-    box-shadow: 0 2px 3px rgb(155, 146, 146);
     position: sticky;
     top: 0;
     background-color: white;
-    
-
+    z-index: 10;
 }
 
 header .navbars{
     display: flex;
     justify-content: space-between;
-    max-width: 1300px;
-    margin: auto;
+    max-width: 1500px ;
+    box-shadow: 0 2px 3px rgb(155, 146, 146);
 }
 
 
@@ -86,9 +89,9 @@ header .navbars .navlinks .droit{
 }
 
 
-
 .dropdown-item:hover{
     background-color: #007bff;
+    transition: .3s;
 }
 .PL{
     width: 10%;
@@ -99,7 +102,7 @@ a{
     color: black;
 }
 a:hover{
-    transition: .1s;
+    transition: .3s;
     text-decoration: none;
 }
 
@@ -121,14 +124,14 @@ header .navbars .navlinks ul li .fa-bag-shopping,.fa-user{
 header .search{
     background-color: rgba(0, 0, 0, 0.7);
     height: 100vh;
-    position: fixed;
     top: -200%;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all ease .2s;
+    z-index: 10;
+    position: fixed;
 }
 header .search .fa-xmark:hover{
     color: rgba(255, 255, 255,0.4);
@@ -137,7 +140,8 @@ header .search.searches{
     top: 0;
 }
 header .search input{
-    padding: 10px 50px;
+    padding: 10px 10px;
+    width: 60%;
     border: none;
     background: none;
     border-bottom: 1px solid white;
@@ -146,6 +150,7 @@ header .search input{
     font-size: 20px;
 }
 header .search input::placeholder{
+    text-align: center;
     color: white;
 }
 
@@ -153,6 +158,7 @@ header .search  .fa-magnifying-glass{
     color: white;
     margin-bottom: 5px;
     font-size: 30px;
+    cursor: pointer;
 }
 
 header .search  .fa-magnifying-glass:hover{
@@ -176,8 +182,9 @@ header .cart{
     width: 400px;
     box-shadow: 0 4px 16px black;
     right: -200%;
-    transition: all ease .2s;
+    transition: all ease .5s;
     overflow: auto;
+    z-index: 100;
 }
 
 header .cart.active{
@@ -208,7 +215,6 @@ header .cart .cartcontent .cart-box{
     justify-content: center;
     font-size: 15px;
     margin-top: 20px;
-    
     padding: 5px;
     width: 90%;
     margin: auto;
@@ -277,25 +283,23 @@ header .cart .btn button:hover{
     font-weight: bold;
 }
 
-.first .cole1 button{
-    background-color: black;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 40px;
-    color: white;
-    margin: 10px 10px;
-}
 
-.first .cole1 button a{
+
+.first .cole1  a{
+    background-color: black;
     color: white;
+    padding: 10px;
+    border-radius: 25px;
+    position: relative;
+    top: 20px;
+    left: 10px;
 }
-.first .cole1 button:hover{
+.first .cole1 a:hover{
     background-color: blue;
     cursor: pointer;
-    scale: 1.1;
-    transition: all ease .2s;
+    transition: all ease .3s;
 }
-.first .cole1 button i{
+.first .cole1 a i{
     color: white;
 }
 .first .cole1 h1{
@@ -306,12 +310,12 @@ header .cart .btn button:hover{
 }
 .first img{
     width: 80%;
-    margin-left: 120px;
+    margin-left: 190px;
 }
 .popul{
-    margin-top: 50px;
+    margin-top: 150px;
 }
-.popul h2 , .carousel h2 ,.second h2{
+.popul h2 , .carousel h2 ,.second h2 ,.new h2{
     text-align: center;
     border-bottom: 2px solid black;
     width: 50%;
@@ -404,6 +408,84 @@ header .cart .btn button:hover{
 }
 
 
+.ligue h2{
+    text-align: center;
+}
+
+.ligue h2 img{
+    width: 30px;
+}
+.informations{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 70px;
+    gap: 30px;
+}
+.new h2{
+    text-align: center;
+    margin-top: 80px;
+    border-bottom: 1px solid black;
+    
+}
+.new{
+    padding: 0 0 60px 0;
+}
+
+.informations img{
+    width: 10%;
+}
+.informations .infos{
+    text-align: center;
+    border-radius:15px;
+    width: 95%;
+    padding: 10px;
+    box-shadow: 0 3px 10px black;
+}
+
+.informations .infos:hover{
+    padding: 10px;
+    transition: all ease .3s;
+    border: 1px blue solid;
+}
+
+
+.formulaire{
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.formulaire p ,.formulaire h2{
+    color:white ;
+}
+.formulaire .box{
+    margin: 10px;
+}
+.formulaire textarea , input{
+    width: 70%;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    outline-color: blue;
+    border-radius: 5px;
+    
+}
+.formulaire .box1 input{
+    border: black solid 1px;
+    
+}
+.formulaire .box1 input:hover{
+    background-color:blue ;
+    transition: all ease .2s;
+    color: white;
+    cursor: pointer;
+    
+}
 footer .fin{
     display: flex;
     justify-content: space-between;
@@ -423,7 +505,9 @@ footer i{
     font-size: 25px;
 }
 
-
+.designer{
+    color: blue;
+}
 
 footer .sec1 a ,.sec2 a{
     color: white;
@@ -508,6 +592,7 @@ header .navbars .navlinks ul li #Open{
     header  .navbars .navlinks ul li{
         padding-bottom:10px ;
     }
+
     header .navbars .navlinks .droit{
         display: block;
         color: white;
@@ -523,7 +608,7 @@ header .navbars .navlinks ul li #Open{
         color: white;
     }
     header .search input{
-        width: 50%;
+        width: 60%;
     }
     .dropdown-item {
         color: black;
@@ -617,6 +702,16 @@ header .navbars .navlinks ul li #Open{
         gap: 10px;
         max-width: 500px;
         margin: 50px auto;
+    }
+
+    .informations{
+        display: block;
+        
+    }
+
+    .informations .infos{
+        margin: 10px 0;
+        width: 100%;
     }
     
     header  .navbars .navlinks ul li  #football , #maison , #phone{

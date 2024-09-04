@@ -74,6 +74,10 @@ function ready(){
         inputs.addEventListener('change',quantitychange);
     }
 
+    
+    document.getElementsByClassName('buy-btn')[0]
+    .addEventListener('click',buyButtonClicked);
+
     updatotal();
     loadCartitems();
 }
@@ -94,6 +98,16 @@ function quantitychange(event){
     }
     updatotal() ;
     saveCartitems();
+    updateCarticon();
+}
+
+function buyButtonClicked(){
+    alert('Votre commande est placer');
+    var cartContent = document.getElementsByClassName('cartcontent')[0]
+    while(cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild);
+    }
+    updatotal();
     updateCarticon();
 }
 
@@ -158,7 +172,7 @@ function updatotal(){
 
         total += quantity*price ;
     }
-    document.getElementsByClassName('total-price')[0].innerText = total ;
+    document.getElementsByClassName('total-price')[0].innerText = total + 'Fcfa' ;
     localStorage.setItem('cartTotal',total)
 }
 
