@@ -71,6 +71,7 @@ header .navbars .navlinks ul{
 
 header .navbars .navlinks ul li{
     margin: 30px 60px 20px 30px;
+    /*margin: 10px 60px;*/
     display: flex;
 }
 
@@ -108,12 +109,14 @@ a:hover{
 .fa-user{
     color: white;
 }
+
 header .navbars .navlinks ul li .fa-bag-shopping:hover , header .cart .fa-xmark:hover ,.fa-magnifying-glass:hover{
     color: rgba(0, 0, 0,0.3);
 }
 header .navbars .navlinks ul li i{
     cursor: pointer;
-    font-size: 23px;
+    font-size: 22px;
+    padding: 3px;
 }
 
 header .navbars .navlinks ul li .fa-bag-shopping,.fa-user{
@@ -128,6 +131,7 @@ header .search{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: all ease .2s;
     z-index: 10;
     position: fixed;
@@ -140,13 +144,16 @@ header .search.searches{
 }
 header .search input{
     padding: 10px 10px;
-    width: 60%;
+    width: 100%;
     border: none;
     background: none;
     border-bottom: 1px solid white;
     outline: none;
     color: white;
     font-size: 20px;
+}
+header .search input[type="submit"]{
+    width: 100px;
 }
 header .search input::placeholder{
     text-align: center;
@@ -171,7 +178,14 @@ header .search .fa-xmark{
     right: 65px;
     cursor: pointer;
 }
-
+header .search .populs{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
 
 header .cart{
     background-color: rgb(255, 255, 255);
@@ -200,7 +214,7 @@ header .cart h2{
 }
 
 header .cart .fa-xmark{
-    font-size: 32px;
+    font-size: 50px;
     position: absolute;
     top: 5px;
     left: 10px;
@@ -257,18 +271,18 @@ header .cart  .total .total-price{
     margin-right: 10px;
 }
 
-header .cart .btn button{
-    padding: 15px 30px;
+header .cart .btn .buy-btn{
+    padding: 13px 30px;
     margin-left: 130px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
-
+    background-color: black;
+    color: white;
 }
-header .cart .btn button:hover{
+header .cart .btn .buy-btn:hover{
     background-color: blue;
     color: white;
-    border: none;
     scale: 1.1;
     transition: all ease .2s;
 }
@@ -314,25 +328,45 @@ header .cart .btn button:hover{
 .popul{
     margin-top: 150px;
 }
+
+.populs{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    overflow-y: auto;
+}
+.populs h1{
+    color: white;
+    width: 900px;
+    text-align: center;
+}
+.populs .box:hover{
+    border: 1px solid blue;
+    border-radius: 5px;
+    transition: .4s;
+}
 .popul h2 , .carousel h2 ,.second h2 ,.new h2{
     text-align: center;
     border-bottom: 2px solid black;
     width: 50%;
     margin: auto;
 }
-.populaire{
+.populaire,header .populs{
     display: grid ;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
     max-width: 1000px;
     margin: 50px auto 0 auto;
 }
-.populaire .box{
+.populaire .box , header .search .populs .box{
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 2px 10px black;
+    box-shadow:1px 3px 4px black;
     /* background-color: rgb(239, 239, 239);*/
     cursor: pointer;
 }
@@ -341,12 +375,12 @@ header .cart .btn button:hover{
     padding: 10px;
     transition: .2s;
 }
-.populaire .box img{
+.populaire .box img, header .search .populs .box img{
     width: 70%;
     height: 240px;
 }
 
-.populaire .box button{
+.populaire .box button ,  header .search .populs .box button{
     width: 100%;
     border: 1px solid black;
     border-radius: 5px;
@@ -354,13 +388,16 @@ header .cart .btn button:hover{
     cursor: pointer;
 }
 
-.populaire .box button:hover{
+.populaire .box button:hover ,header .search .populs .box button:hover{
     background-color: blue;
     color: white;
     transition: .3s;
 }
 
-
+.second .partenaire h1{
+    width:1000px; 
+    margin:190px;
+}
 .partenaire{
     display: grid;
     grid-template-columns:repeat(4,1fr) ;
@@ -373,7 +410,7 @@ header .cart .btn button:hover{
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 2px 10px black;
+    box-shadow:1px 3px 4px black;
     /*background-color: rgb(239, 239, 239);*/
     cursor: pointer;
 }
@@ -388,6 +425,9 @@ header .cart .btn button:hover{
     height: 240px;
 }
 
+.product-price{
+    font-weight: 700;
+}
 
 .partenaire .box button{
     width: 100%;
@@ -428,7 +468,7 @@ header .cart .btn button:hover{
     
 }
 .new{
-    padding: 0 0 60px 0;
+    padding:  60px ;
 }
 
 .informations img{
@@ -437,7 +477,7 @@ header .cart .btn button:hover{
 .informations .infos{
     text-align: center;
     border-radius:15px;
-    width: 95%;
+    width: 500px;
     padding: 10px;
     box-shadow: 0 3px 10px black;
 }
@@ -465,7 +505,7 @@ header .cart .btn button:hover{
 .formulaire .box{
     margin: 10px;
 }
-.formulaire textarea , input{
+.formulaire textarea , input , select{
     width: 70%;
     background-color: white;
     color: black;
@@ -475,6 +515,7 @@ header .cart .btn button:hover{
     border-radius: 5px;
     
 }
+
 .formulaire .box1 input{
     border: black solid 1px;
     
@@ -489,7 +530,6 @@ header .cart .btn button:hover{
 footer .fin{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
     background-color: black;
     padding: 20px;
 }
@@ -545,6 +585,12 @@ header .navbars .fa-house,.fa-futbol,.fa-phone, .fa-bars,#Open ,#icon2{
     display: none;
 }
 
+#formu  input[type="search"]{
+    width: 500px;
+}
+
+
+
 header .navbars #Open{
     display: none;
 }
@@ -553,15 +599,89 @@ header .navbars .navlinks ul li #Open{
     display: block;
 }
 .carousel{
-    margin-top: 70px;
+    width: 85%;
+    margin: 70px auto;
 }
 
 .carousel-inner{
     border-radius: 15px;
 }
 
+.container{
+    width: 500px;
+}
 
 
+
+.container .box{
+    margin: 10px 0;
+    color: black;
+}
+
+.container .box input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    outline-color: #007bff;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+label{
+    color:black;
+}
+.container .box input::placeholder{
+    text-align: center;
+    color: black;
+}
+.container .box1{
+    margin: 20px 0;
+}
+.container .box1 input{
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    border: 1px black solid;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+}
+.container .box1 input:hover{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    scale: 1.1;
+    transition: .2s;
+}
+
+
+.container h2{
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.container p{
+    margin-left: 10px ;
+    color: white;
+}
+
+.container p a:hover{
+    color: red;
+}
+
+#carousel2{
+    display: none;
+}
+
+#paki{
+    display:none;
+}
 
 @media screen and (max-width : 900px){
     *{
@@ -602,6 +722,11 @@ header .navbars .navlinks ul li #Open{
         right: 0;
     }
 
+
+    header .navbars .logo{
+        font-size: 15px;
+    }
+
     header .navbars .navlinks ul{
         display: flex;
         flex-direction: column;
@@ -632,7 +757,7 @@ header .navbars .navlinks ul li #Open{
         color: white;
     }
     header .search input{
-        width: 60%;
+        width: 100px;
     }
     .dropdown-item {
         color: black;
@@ -665,23 +790,23 @@ header .navbars .navlinks ul li #Open{
     }
     
     .populaire .box{
-        height: 260px;
+        height: 400px;
     }
 
     .populaire .box img{
         width: 50%;
-        height: 130px;
+        height: 230px;
+
     }
 
-    .partenaire .box{
-        height: 265px;
+    .partenaire .box ,header .search .populs .box{
+        height: 400px;
     }
 
-    .partenaire .box img{
+    .partenaire .box img , header .search .populs .box img{
         width: 50%;
-        height: 130px;
+        height: 230px;
     }
-
 
     
     .first{
@@ -696,7 +821,7 @@ header .navbars .navlinks ul li #Open{
         font-size: 30px;
         position: relative;
         top: 23px;
-        right: 10px;
+        right: 17px;
         cursor: pointer;
     }
     .fa-futbol{
@@ -705,16 +830,17 @@ header .navbars .navlinks ul li #Open{
 
     .populaire{
         display: grid ;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(1,1fr);
         gap: 10px;
-        max-width: 400px;
-        margin: 50px 10px;
+        max-width: 350px;
+        margin: 50px auto;
     }
-    .partenaire{
+
+    .partenaire,header .search .populs{
         display: grid;
-        grid-template-columns:repeat(2,1fr) ;
+        grid-template-columns:repeat(1,1fr) ;
         gap: 5px;
-        max-width:400px;
+        max-width:350px;
         margin: 50px  auto;
     }
 
@@ -724,7 +850,7 @@ header .navbars .navlinks ul li #Open{
 
     .informations .infos{
         margin: 20px auto;
-        width: 80%;
+        width: 300px;
     }
 
 
@@ -747,7 +873,7 @@ header .navbars .navlinks ul li #Open{
         position: absolute;
         top: 18px;
         right:20px;    
-        font-size: 25px;
+        font-size: 30px;
         cursor: pointer;
         color: white;
     }
@@ -766,6 +892,54 @@ header .navbars .navlinks ul li #Open{
         display: block;
     }
 
+    .container {
+        width: 340px;
+    }
+    
+    h2{
+        font-size: 20px;
+    }
 
-   
+
+    .container p{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #icon2  input{
+        width: 100px;
+    }
+    #icon2{
+        margin-left:40px;
+    }
+    .second .partenaire h1{
+        margin: 200px 40px;
+        font-size: 20px;
+    }
+
+    #paki{
+        display: block;
+        margin-left: 40px;
+    }
+
+    .carousel img{
+        height: 500px;
+    }
+
+    #carousel1{
+        display: none;
+    }
+
+    #carousel2{
+        display:block;
+    }
+    .populs h1{
+        font-size: 15px;
+        position: relative;
+        right: 240px;
+    }
+    header .search .populs{
+
+        max-width:450px;
+
+    }
 }
