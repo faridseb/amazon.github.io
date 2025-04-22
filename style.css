@@ -1,0 +1,945 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,600;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    box-shadow: 0 2px 3px rgb(155, 146, 146);
+    width: 100%;
+}
+
+header .navbars{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header .navbars .logo{
+    font-size: 30px;
+    margin: 15px 5px;
+    font-weight: bold;
+}
+#Open[data-quantity="0"]::after ,.fa-bag-shopping[data-quantity="0"]::after{
+    contain: '';
+}
+.fa-bag-shopping{
+    position: relative;
+}
+#Open[data-quantity="0"]::after, .fa-bag-shopping[data-quantity]::after{
+    content: attr(data-quantity);
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    background-color:  #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+header .navbars span{
+    color: blue;
+}
+
+header .navbars .navlinks ul{
+    display: flex;
+    margin-right: 75px;
+}
+
+header .navbars .navlinks ul li{
+    margin: 30px 60px 20px 30px;
+    /*margin: 10px 60px;*/
+    display: flex;
+}
+
+header .navbars .navlinks .droit{
+    display: none;
+    color: white;
+}
+
+#show{
+    display: none;
+}
+.dropdown-item{
+    text-decoration: none;
+    color: black;
+}
+
+
+.dropdown-item:hover{
+    background-color: #007bff;
+    transition: .3s;
+}
+.PL{
+    width: 10%;
+    margin-right: 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    transition: .3s;
+    text-decoration: none;
+}
+
+.fa-user{
+    color: white;
+}
+
+header .navbars .navlinks ul li .fa-bag-shopping:hover , header .cart .fa-xmark:hover ,.fa-magnifying-glass:hover{
+    color: rgba(0, 0, 0,0.3);
+}
+header .navbars .navlinks ul li i{
+    cursor: pointer;
+    font-size: 22px;
+    padding: 3px;
+}
+
+header .navbars .navlinks ul li .fa-bag-shopping,.fa-user{
+    margin-top: 2px;
+}
+
+header .search{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    top: -200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all ease .2s;
+    z-index: 10;
+    position: fixed;
+}
+header .search .fa-xmark:hover{
+    color: rgba(255, 255, 255,0.4);
+}
+header .search.searches{
+    top: 0;
+}
+header .search input{
+    padding: 10px 10px;
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 20px;
+}
+header .search input[type="submit"]{
+    width: 100px;
+}
+header .search input::placeholder{
+    text-align: center;
+    color: white;
+}
+
+header .search  .fa-magnifying-glass{
+    color: white;
+    margin-bottom: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+header .search  .fa-magnifying-glass:hover{
+    color: rgba(255, 255, 255,0.4);
+}
+header .search .fa-xmark{
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 55px;
+    right: 65px;
+    cursor: pointer;
+}
+header .search .populs{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+header .cart{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 400px;
+    box-shadow: 0 4px 16px black;
+    right: -200%;
+    transition: all ease .5s;
+    overflow: auto;
+    
+}
+
+header .cart.active{
+    right: 0;
+}
+header .cart h2{
+    text-align: center;
+    margin-top: 10px ;
+    border-bottom: 2px black solid;
+    width: 50%;
+    margin: auto;
+    
+
+}
+
+header .cart .fa-xmark{
+    font-size: 50px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
+}
+
+header .cart .cartcontent .cart-box{
+    display: grid;
+    grid-template-columns: 45% 30% 25%;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 5px;
+    width: 90%;
+    margin: auto;
+}
+
+header .cart .cartcontent .cart-box img{
+    width: 50%;
+}
+
+header .cart .cartcontent .cart-box input{
+    width: 50%;
+    padding: 5px;
+    border-radius: 2px;
+    border: 1px solid black;
+    outline-color: blue;
+    cursor: pointer;
+}
+
+header .cart .cartcontent .cart-box .fa-trash{
+    margin-left: 30px;
+    font-size: 23px;
+    cursor: pointer;
+}
+header .cart .cartcontent .cart-box .fa-trash:hover{
+    color: rgb(254, 80, 80);
+}
+
+header .cart  .total{
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin: 10px auto ;
+}
+
+header .cart  .total .total-title{
+    margin-right: 40px;
+}
+
+header .cart  .total .total-price{
+    margin-right: 10px;
+}
+
+header .cart .btn .buy-btn{
+    padding: 13px 30px;
+    margin-left: 130px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+header .cart .btn .buy-btn:hover{
+    background-color: blue;
+    color: white;
+    scale: 1.1;
+    transition: all ease .2s;
+}
+.first{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.first .cole1 h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+
+.first .cole1  a{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.first .cole1 a:hover{
+    background-color: blue;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.first .cole1 a i{
+    color: white;
+}
+.first .cole1 h1{
+    margin: 100px 0 0 10px;
+}
+.first .cole1 p{
+    margin: 0 0 0 10px;
+}
+.first img{
+    width: 80%;
+    margin-left: 150px;
+}
+.popul{
+    margin-top: 150px;
+}
+
+.populs{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    overflow-y: auto;
+}
+.populs h1{
+    color: white;
+    width: 900px;
+    text-align: center;
+}
+.populs .box:hover{
+    border: 1px solid blue;
+    border-radius: 5px;
+    transition: .4s;
+}
+.popul h2 , .carousel h2 ,.second h2 ,.new h2{
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 50%;
+    margin: auto;
+}
+.populaire,header .populs{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+}
+.populaire .box , header .search .populs .box{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow:1px 3px 4px black;
+    /* background-color: rgb(239, 239, 239);*/
+    cursor: pointer;
+}
+.populaire .box:hover{
+    border: 2px solid blue;
+    padding: 10px;
+    transition: .2s;
+}
+.populaire .box img, header .search .populs .box img{
+    width: 70%;
+    height: 240px;
+}
+
+.populaire .box button ,  header .search .populs .box button{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:7px;
+    cursor: pointer;
+}
+
+.populaire .box button:hover ,header .search .populs .box button:hover{
+    background-color: blue;
+    color: white;
+    transition: .3s;
+}
+
+.second .partenaire h1{
+    width:1000px; 
+    margin:190px;
+}
+.partenaire{
+    display: grid;
+    grid-template-columns:repeat(4,1fr) ;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+.partenaire .box{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow:1px 3px 4px black;
+    /*background-color: rgb(239, 239, 239);*/
+    cursor: pointer;
+}
+
+.partenaire .box:hover{
+    border: 2px solid blue;
+    padding: 10px;
+    transition: .3s;
+}
+.partenaire .box img{
+    width: 100%;
+    height: 240px;
+}
+
+.product-price{
+    font-weight: 700;
+}
+
+.partenaire .box button{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:7px;
+    cursor: pointer;
+}
+
+.partenaire .box button:hover{
+    background-color: blue;
+    color: white;
+    transition: .2s;
+}
+.second{
+    margin-top: 50px;
+}
+
+
+.ligue h2{
+    text-align: center;
+}
+
+.ligue h2 img{
+    width: 30px;
+}
+.informations{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 70px;
+    gap: 30px;
+    
+}
+.new h2{
+    text-align: center;
+    margin-top: 80px;
+    border-bottom: 1px solid black;
+    
+}
+.new{
+    padding:  60px ;
+}
+
+.informations img{
+    width: 10%;
+}
+.informations .infos{
+    text-align: center;
+    border-radius:15px;
+    width: 500px;
+    padding: 10px;
+    box-shadow: 0 3px 10px black;
+}
+
+.informations .infos:hover{
+    padding: 10px;
+    transition: all ease .3s;
+    border: 1px blue solid;
+}
+
+
+.formulaire{
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.formulaire p ,.formulaire h2{
+    color:white ;
+}
+.formulaire .box{
+    margin: 10px;
+}
+.formulaire textarea , input , select{
+    width: 70%;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    outline-color: blue;
+    border-radius: 5px;
+    
+}
+
+.formulaire .box1 input{
+    border: black solid 1px;
+    
+}
+.formulaire .box1 input:hover{
+    background-color:blue ;
+    transition: all ease .2s;
+    color: white;
+    cursor: pointer;
+    
+}
+footer .fin{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 20px;
+}
+
+footer h3{
+    color: white;
+    border-bottom: 2px white solid;
+    width: 100%;
+}
+
+footer i{
+    color: white;
+    font-size: 25px;
+}
+
+.designer{
+    color: blue;
+}
+
+footer .sec1 a ,.sec2 a{
+    color: white;
+}
+
+footer .sec1 a:hover ,.sec2 a:hover, footer i:hover{
+    color: blue;
+}
+
+footer .sec3 ul{
+    display: flex;
+}
+
+footer .sec3 ul li{
+    margin: 10px 20px;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-top: 1px solid white;
+}
+header .navbars .fa-house,.fa-futbol,.fa-phone, .fa-bars,#Open ,#icon2{
+    display: none;
+}
+
+.login{
+    padding:10px 25px ;
+    display: none;
+}
+
+#icones{
+    display: none;
+}
+
+#formu  input[type="search"]{
+    width: 500px;
+}
+
+
+
+header .navbars #Open{
+    display: none;
+}
+
+header .navbars .navlinks ul li #Open{
+    display: block;
+}
+.carousel{
+    width: 85%;
+    margin: 70px auto;
+}
+
+.carousel-inner{
+    border-radius: 15px;
+}
+
+.container{
+    width: 500px;
+}
+
+
+
+.container .box{
+    margin: 10px 0;
+    color: black;
+}
+
+.container .box input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    outline-color: #007bff;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+label{
+    color:black;
+}
+.container .box input::placeholder{
+    text-align: center;
+    color: black;
+}
+.container .box1{
+    margin: 20px 0;
+}
+.container .box1 input{
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    border: 1px black solid;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+}
+.container .box1 input:hover{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    scale: 1.1;
+    transition: .2s;
+}
+
+
+.container h2{
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.container p{
+    margin-left: 10px ;
+    color: white;
+}
+
+.container p a:hover{
+    color: red;
+}
+
+#carousel2{
+    display: none;
+}
+
+#paki{
+    display:none;
+}
+
+@media screen and (max-width : 900px){
+    *{
+        font-size: 14px;
+    }
+
+
+    header{
+
+        width: 100%;
+        /*position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        position: sticky;
+        */
+        
+    }
+
+    
+    header .navbars .navlinks{
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        position: fixed;
+        margin-left: 0%;
+        transition: all ease .2s;
+        align-items: center;
+        right: -100%;
+    }
+
+    header .navbars .navlinks.open{
+        right: 0;
+    }
+
+
+    header .navbars .logo{
+        font-size: 15px;
+    }
+
+    header .navbars .navlinks ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    header .navbars .logo span{
+        font-size: 30px;
+    }
+    header  .navbars .navlinks ul li{
+        padding-bottom:10px ;
+    }
+
+    header .navbars .navlinks .droit{
+        display: block;
+        color: white;
+        text-align: center;
+        margin-left: 50px;
+    }
+    
+    #texte{
+        color: white;
+    }
+    header  .navbars .navlinks ul li i{
+        margin-right: 25px;
+        color: white;
+    }
+    header .search input{
+        width: 100px;
+    }
+    .dropdown-item {
+        color: black;
+    }
+    header .navlinks .dropdown-item .fa-right-to-bracket , header .navlinks .dropdown-item  .fa-plus{
+        color: black;
+    }
+    .PL{
+        width: 10%;
+    }
+    #show{
+        display: block;
+    }
+    #show2{
+        display: none;
+    }
+    
+
+    .item{
+        display: none;
+    }
+    header .search  .fa-magnifying-glass{
+        color: white;
+        margin-bottom: 40px;
+    }
+    header .navbars  .fa-magnifying-glass:hover{
+        
+        color: rgba(0, 0, 0,0.3);
+    
+    }
+    
+    .populaire .box{
+        height: 400px;
+    }
+
+    .populaire .box img{
+        width: 50%;
+        height: 230px;
+
+    }
+
+    .partenaire .box ,header .search .populs .box{
+        height: 400px;
+    }
+
+    .partenaire .box img , header .search .populs .box img{
+        width: 50%;
+        height: 230px;
+    }
+
+    
+    .first{
+        display: block;
+    }
+    .first img{
+        width: 80%;
+        margin-left: 50px;
+    }
+    header .fa-magnifying-glass,.fa-bag-shopping ,.fa-bars ,#icon2{
+        display: block;
+        font-size: 30px;
+        position: relative;
+        top: 23px;
+        right: 17px;
+        cursor: pointer;
+    }
+    .fa-futbol{
+        display: inline;
+    }
+
+    .populaire{
+        display: grid ;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+        max-width: 350px;
+        margin: 50px auto;
+    }
+
+    .partenaire,header .search .populs{
+        display: grid;
+        grid-template-columns:repeat(1,1fr) ;
+        gap: 5px;
+        max-width:350px;
+        margin: 50px  auto;
+    }
+
+    .informations{
+        display: block;
+    }
+
+    .informations .infos{
+        margin: 20px auto;
+        width: 300px;
+    }
+
+
+    header  .navbars .navlinks ul li  #football , #maison , #phone{
+        display: block;
+    }
+
+    header .navbars .navlinks ul li .fa-magnifying-glass , .fa-bag-shopping{
+        display: none;
+    }
+
+    
+    
+    #Open:hover ,#icones2:hover ,#icones:hover{
+    color: rgba(229, 220, 220, 0.3);
+    }
+    
+    #icones{
+        display: block;
+        position: absolute;
+        top: 18px;
+        right:20px;    
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .login{
+        display: block;
+        border: 1px solid black;
+        bottom: 150px ;
+    }
+
+
+    header .navbars #Open{
+        display: block;
+    }
+    footer .fin{
+        display: block;
+    }
+
+    .container {
+        width: 340px;
+    }
+    
+    h2{
+        font-size: 20px;
+    }
+
+
+    .container p{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #icon2  input{
+        width: 100px;
+    }
+    #icon2{
+        margin-left:40px;
+    }
+    .second .partenaire h1{
+        margin: 200px 40px;
+        font-size: 20px;
+    }
+
+    #paki{
+        display: block;
+        margin-left: 40px;
+    }
+
+    .carousel img{
+        height: 500px;
+    }
+
+    #carousel1{
+        display: none;
+    }
+
+    #carousel2{
+        display:block;
+    }
+    .populs h1{
+        font-size: 15px;
+        position: relative;
+        right: 240px;
+    }
+    header .search .populs{
+
+        max-width:450px;
+
+    }
+}

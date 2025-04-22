@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,600;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ensemble{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+header a{
+    color: white;
+}
+.container{
+    width: 500px;
+    margin: 0 20px;
+}
+
+
+
+.container .box{
+    margin: 10px 0;
+    color: black;
+}
+
+.container .box input,select,.contenu .box input{
+    width: 80%;
+    margin: 0 30px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    outline-color: #007bff;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+label{
+    color:black;
+    margin: 0 30px;
+}
+.container .box input::placeholder{
+    text-align: center;
+    color: rgb(125, 118, 118);
+}
+.container .box1{
+    margin: 20px 0;
+}
+.container .box1 input ,.contenu .box1 input{
+    width: 80%;
+    height: 45px;
+    margin: 0 30px;
+    cursor: pointer;
+    border: 1px black solid;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+}
+.contenu .box2 input{
+    width: 100%;
+    margin-left: 50px ;
+}
+.contenu h2{
+    text-align: center;
+}
+.container .box1 input:hover{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    scale: 1.1;
+    transition: .2s;
+}
+
+
+.container h2{
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.container p{
+    margin-left: 10px ;
+    color: white;
+}
+
+.container p a:hover{
+    color: red;
+}
+
+
+
+
+table th ,table td {
+    border-top : 1px solid black ;
+    border-bottom : 1px solid black ;
+    padding :10px 30px;
+}
+table th {
+    background-color : #f2f2f2;
+}
+table{
+    width:200px;
+    border-collapse: collapse;
+}
+
+img{
+    width: 100%;
+}
+
+.total p {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+form{
+    padding: 20px;
+    border-radius: 10px;
+}
+footer{
+    width: 100%;
+}
+
+footer .fin{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 20px;
+}
+
+footer h3{
+    color: white;
+    border-bottom: 2px white solid;
+    width: 100%;
+}
+
+footer i{
+    color: white;
+    font-size: 25px;
+}
+
+.designer{
+    color: blue;
+}
+
+footer .sec1 a ,.sec2 a{
+    color: white;
+}
+
+footer .sec1 a:hover ,.sec2 a:hover, footer i:hover{
+    color: blue;
+}
+
+footer .sec3 ul{
+    display: flex;
+}
+
+footer .sec3 ul li{
+    margin: 10px 20px;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-top: 1px solid white;
+}
+
+
+
+.container h2{
+    color:black; font-size:25px;
+}
+
+@media screen and (max-width:900px) {
+    *{
+        font-size: 10px ;
+    }
+    .ensemble{
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    table th ,table td {
+        border-top : 1px solid black ;
+        border-bottom : 1px solid black ;
+        padding :10px 20px;
+    }
+
+    h2{
+        font-size: 10px;
+    }
+    footer .fin{
+        display: block;
+    }
+    .container{
+        width: 414px;
+    }
+    .container2{
+        width: 300px;
+        margin-top: 10px;
+        margin-left:80px ;
+    }
+    .container h2{
+        font-size: 20px;
+    }
+}

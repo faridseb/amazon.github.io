@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(20230901-slider-header-Blog-Mooiste-Voetbalshirts2324.webp);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+}
+
+.ensemble{
+    padding: 50px;
+    
+}
+
+.box{
+    margin: 40px;
+    width: 100%;
+}
+
+
+input{
+    height: 50px;
+    cursor: pointer;
+    width: 100%;
+    
+}
+
+.box a{
+    color:white;
+    transition: all ease .3s;
+    padding: 10px;
+    width: 100%;
+    
+
+}
+
+.box a:hover{
+    background-color: darkkhaki;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+button{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline-color: black;
+    background-color: black;
+}
+
+.sig1{
+    width: 20px;
+    position: relative;
+    top:17px;
+    right: 3px;
+}
+
+label{
+    color: aliceblue;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+:checked{
+    color: black;
+}
+
+::placeholder{
+    text-align: center;
+    color: black;
+}
+
+
+@media screen and (max-width : 900px ) {
+    .box{
+        width: 100%;
+    }
+    
+}
+
+
+
+/*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(20230901-slider-header-Blog-Mooiste-Voetbalshirts2324.webp);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+}
+
+.ensemble{
+    padding: 50px;
+    border-radius: 10px;
+
+}
+
+.box{
+    margin: 40px;
+    width: 100%;
+
+    
+}
+
+
+input{
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    
+}
+
+
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+button{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline-color: black;
+}
+
+.sig1{
+    width: 20px;
+}
+
+label{
+    color: aliceblue;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+:checked{
+    color: black;
+}
+
+::placeholder{
+    text-align: center;
+    color: BLACK;
+}
+
+

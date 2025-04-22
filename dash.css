@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,600;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    
+    text-align: center;
+    box-shadow: 0px 1px 2px black;
+    padding: 20px;
+    position :sticky;
+    top:0;
+    background : black ;
+}
+header a{
+    color :white;
+}
+aside{
+    background-color:#007bff;
+    width: 300px;
+    height: 100vh;
+    
+    position: fixed;
+
+}
+i{
+    color: white;
+}
+aside .cont1{
+    padding: 20px;
+}
+i{
+    padding:10px;
+}
+aside .cont1:hover{
+
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    
+}
+aside .cont1 a{
+    color:white;
+}
+aside .cont1 a:hover{
+    color: white;
+}
+.contenu{
+    display : flex;
+}
+.container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content :center;
+    align-items:center;
+    width : 900px ;
+}
+
+.container h1{
+    margin-left:115px;
+    
+}
+
+table th ,table td , tr {
+    border : 1px solid black ;
+    border-collapse : collapse ;
+    padding :20px;
+}
+
+.container .boxes {
+    border: 1px solid black;
+    padding: 70px 40px;
+    margin: 20px 10px;
+    width: 250px;
+    box-shadow: 1px 3px 5px black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.container .boxes:hover{
+    scale: 1.1;
+    transition: .3s;
+}
+.container .boxes button{
+    width: 100%;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.container .boxes button:hover{
+    background-color: #007bff;
+    color: white;
+}
+.texte{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+table th ,table td {
+    border-top : 1px solid black ;
+    border-bottom : 1px solid black ;
+    padding :20px 45px;
+}
+table th {
+    background-color : #f2f2f2;
+}
+table{
+    margin: 0 50px;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width:900px) {
+    .respo{
+        display: none;
+    }
+    aside{
+        background-color:#007bff;
+        width: 100px;
+        height: 100vh;
+        position: fixed;
+    }
+    .container{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-content :center;
+        align-items:center;
+        width : 100px ;
+        margin: 0; 
+    }
+}
