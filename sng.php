@@ -90,7 +90,7 @@ include "connect.php";
                                 <a class="dropdown-item" href="PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
                                 <a class="dropdown-item" href="LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
                                 <a class="dropdown-item" href="L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
-                                <a class="dropdown-item" href="SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
+                                <a class="dropdown-item" href="SA.php"><img src="SEIE.png" alt="" class="PL">SERIE  A</a>
                                 <a class="dropdown-item" href="BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
                                 <a class="dropdown-item" href="SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
                             </div>
@@ -211,9 +211,9 @@ include "connect.php";
         <div class="sec2">
             <h3>Online shop</h3>
             <ul>
-                <li><a href="">Maillot domicile</a></li>
-                <li><a href="">Maillot Exterieur</a></li>
-                <li><a href="">Selection nationale</a></li>
+                <li><a href="#">Maillot domicile</a></li>
+                <li><a href="#">Maillot Exterieur</a></li>
+                <li><a href="#">Selection nationale</a></li>
             </ul>
         </div>
         <div class="sec3">

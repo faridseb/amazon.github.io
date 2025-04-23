@@ -90,7 +90,12 @@ $products = $resultat_c->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <a href="indexs.php" style="font-size: 20px;">RECU DE LA COMMANDE</a>
     </header>
+    <div class="message" style=" text-align:center; ">
+            <i class="fa-solid fa-square-check" style="font-size:45px; text-align:center; color:green; "></i>
+            <p style="font-size:20px; text-align:center; color:green;">Merci pour votre Commande</p>
+            </div>
     <div class="ensemble" >
+            
             <div class="container2">
                 <h2>RECU DE LA COMMANDE </h2>
                     <table>

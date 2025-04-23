@@ -47,10 +47,14 @@ $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
         background-color:blue;
     }
     table tr td {
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
     .respo{
         color:white;
+    }
+    #sup a:hover{
+        background-color:red; 
+        
     }
 </style>
 <body>
@@ -87,24 +91,26 @@ $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
         <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <!-- <th>Id</th> -->
                         <th>Date</th>
                         <th>Client</th>
                         <th>Total</th>
                         <th>Telephone</th>
                         <th>Voir</th>
+                        <th>Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
                     
                 <?php foreach($utilisateurs as $utilisateur): ?>
                     <tr >
-                    <td><?=$utilisateur['id_commande']?></td>
+                    <!-- <td><?=$utilisateur['id_commande']?></td> -->
                     <td><?=$utilisateur['date_commande']?></td>
                     <td><?=$utilisateur['Nom']?> <?=$utilisateur['Prenom']?></td>
                     <td><?=$utilisateur['total_commande']?>Fcfa</td>
                     <td><?=$utilisateur['Tel']?> </td>
                     <td> <a href="view.php?id=<?=$utilisateur['id_commande']?>">VOIR</a></td>
+                    <td style="text-align:center;" id="sup"><a href="supcom.php?id=<?=$utilisateur['id_commande']?>"><i class="fa-solid fa-xmark"></i></a></td>
                     
                     
                     </tr>

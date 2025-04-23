@@ -70,12 +70,6 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
 
 }
 
-if(isset($_POST['nom_a'])){
-    $search = $_POST['nom_a'];
-    $requete2 = 'SELECT * FROM produit WHERE lib_prod LIKE "%'.$search.'%"';
-    $resultat2 = $bdd->query($requete2);
-    $products2 = $resultat2->fetchAll(PDO::FETCH_ASSOC);
-}
 
 
 ?>
@@ -176,28 +170,14 @@ if(isset($_POST['nom_a'])){
 
         <div class="search">
             <div>
-                <form action="" method="POST" id="formu">
+                <form action="" method="POST" id="loginForm">
                     <input type="search" placeholder="RECHERCHE..." name="nom_a" style="width:300px;">
                     <input type="submit" value="envoyer" style="background-color:blue; color:white; cursor:pointer;">
                 </form>
                 <i class="fa-solid fa-xmark" id="croix"></i>
             </div>
-            <div class="populs">
-                <?php if(empty($_POST['nom_a'])) { ?>
-                    <h1 >AUCUNE RECHERCHE EFFECTUER</h1>
-
-                <?php } else {foreach($products2 as $product2){ ?>
-                <article class="box" style="background-color:white;">
-                    <img loading="lazy" src="<?=$product2['img_prod']?>" alt="" class="product-img">
-                    <h4 class="product-title"><?=$product2['lib_prod']?></h4>
-                    <div class="product-price"><?=$product2['prix_prod']?><span style="color:blue;">Fcfa</span></div>
-                    <?php if(isset($_SESSION['utilisateur'])){ ?>
-                        <button class="addcart"><a href="cart.php?id=<?=$product2['id_prod']?>">AJOUTER AU PANIER</a></button>
-                    <?php } else { ?>
-                        <button class="addcart"><a href="login.php">AJOUTER AU PANIER</a></button>
-                    <?php } ?>
-                </article>
-                <?php }} ?>
+            <div class="populs" id="populs">
+                
             </div>
         </div>
     </header>
@@ -424,7 +404,58 @@ if(isset($_POST['nom_a'])){
     </footer>
 
 
-    
+    <script>
+
+
+
+
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try {
+                const formData = new FormData(e.target);
+                const response = await fetch('recherche.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                // Afficher la notification
+                const notification = `
+                        <article class="box" style="background-color:white;">
+                        <img loading="lazy" src="${images}" alt="" class="product-img">
+                        <h4 class="product-title">${lib}</h4>
+                        <div class="product-price">${prix}<span style="color:blue;">Fcfa</span></div>
+                        <?php if(isset($_SESSION['utilisateur'])){ ?>
+                            <button class="addcart"><a href="cart.php?id=1">AJOUTER AU PANIER</a></button>
+                        <?php } else { ?>
+                            <button class="addcart"><a href="login.php">AJOUTER AU PANIER</a></button>
+                        <?php } ?>
+                        </article>
+                `;
+
+                const container = document.getElementById('populs');
+                container.innerHTML = notification;
+                
+
+
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>

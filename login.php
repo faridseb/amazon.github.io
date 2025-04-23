@@ -1,64 +1,3 @@
-
-<?php
-include "connect.php";
-
-
-    
-    if(isset($_POST['ok'])){
-        $email = htmlspecialchars($_POST['email']);
-        $mdp = sha1($_POST['mdp']);
-
-
-        
-        if(!empty($email) AND !empty($mdp)){
-            if($email == "seboufarid43@gmail.com" && $_POST['mdp']=='admin'){
-                header("location:dashboard.php");
-            }
-            else{
-                $requete = $bdd->prepare("SELECT * FROM client WHERE  email=? AND mdp =?");
-            $requete->execute(
-                array($email,$mdp)
-            );
-            $reponse = $requete->rowCount();
-            
-            if( $reponse > 0){
-                $utilisateur = $requete->fetch(PDO::FETCH_ASSOC);
-                $id = $utilisateur['id_clt'];
-                $nom_user  =  $utilisateur['Nom'];
-                $prenom_user  =  $utilisateur['Prenom'];
-                $_SESSION['utilisateur'] = [
-                "id" => $id,
-                "nom" => $nom_user,
-                "prenom" => $prenom_user,
-                "email" => $email ,
-                "mdp" => $mdp
-                ];
-                header("location:index.php");
-            }
-            else{
-                $erreur = 'EMAIL OU MOT DE PASSE INCORRECT';
-            }
-            }
-            
-        }
-    else{
-        $erreur = 'VEUILLEZ REMLIR TOUS LES CHAMPS';
-    }
-}
-
-
-?>
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -158,10 +97,11 @@ include "connect.php";
         </div>
         
     </header>
-    <form action="" method="POST">
+    <form id="loginForm" method="POST" >
         <div class="con" style="margin: 0px; background-color: black; padding: 40px ; color: white;"><h1>CONNEXION</h1></div>
         
         <div class="container">
+        <div id="containers"></div>
         <?php
                 if(isset($erreur)){
                     echo '<p style= "backdrop-filter: blur(150px); box-shadow: 0 1px 5px black; color:red; margin-top: 10px; padding: 7px; text-align: center; font-weight: bold;">'.$erreur.'</p>';
@@ -219,7 +159,53 @@ include "connect.php";
     
     </footer>
 
+    <script>
 
+
+
+
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            try {
+                const formData = new FormData(e.target);
+                const response = await fetch('traitement.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                // Afficher la notification
+                const notification = `
+                <p style= "background-color:${data.success ? 'green' : 'red'}; color:white; margin-top: 10px; padding: 7px; text-align: center;">${data.message}</p>
+                `;
+
+                const container = document.getElementById('containers');
+                container.innerHTML = notification;
+                
+
+                if (data.success && data.redirect) {
+                    setTimeout(() => {
+                        window.location.href = data.redirect;
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
