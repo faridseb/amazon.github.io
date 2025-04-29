@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 
 $requete = "SELECT * 
@@ -183,7 +183,7 @@ if(isset($_SESSION['utilisateur'])){
         <section class="partenaire">
             <?php foreach ($products as $product) { ?>
             <article class="box">
-                <img src="<?=$product['img_prod']?>" alt="" class="product-img">
+                <img src="../images/<?=$product['img_prod']?>" alt="" class="product-img">
                 <h5 class="product-title"><?=$product['lib_prod']?></h5>
                 <div class="product-price"><?=$product['prix_prod']?><span> Fcfa</span></div>
                 <?php if(isset($_SESSION['utilisateur'])){ ?>

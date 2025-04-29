@@ -1,6 +1,6 @@
 <?php
-include "connect.php";
-require_once('vendor/tecnickcom/tcpdf/tcpdf.php'); // Inclusion de TCPDF
+include "../connect.php";
+require_once('../vendor/tecnickcom/tcpdf/tcpdf.php'); // Inclusion de TCPDF
 
 // Vérifier si l'ID de la commande est défini dans la session
 if (!isset($_SESSION['commande']['id_commande'])) {

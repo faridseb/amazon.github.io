@@ -99,12 +99,12 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
                                 <i class="fa-regular fa-futbol"></i>Catalogue
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
-                                <a class="dropdown-item" href="LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
-                                <a class="dropdown-item" href="L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
-                                <a class="dropdown-item" href="SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
-                                <a class="dropdown-item" href="BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
-                                <a class="dropdown-item" href="SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
+                                <a class="dropdown-item" href="ligues/PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
+                                <a class="dropdown-item" href="ligues/LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
+                                <a class="dropdown-item" href="ligues/L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
+                                <a class="dropdown-item" href="ligues/SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
+                                <a class="dropdown-item" href="ligues/BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
+                                <a class="dropdown-item" href="ligues/SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
                             </div>
                         </div>
                     </li>
@@ -129,7 +129,7 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
                         </div>
                     </li>
                     <?php if(isset($_SESSION['utilisateur'])){ ?>
-                        <li><a href="panier.php"><i class="fa-solid fa-bag-shopping" data-quantity="<?=$NBR['total']?>" ></i></a></li>
+                        <li><a href="panier/"><i class="fa-solid fa-bag-shopping" data-quantity="<?=$NBR['total']?>" ></i></a></li>
                     <?php } else { ?>
                         <li><a href="login.php"><i class="fa-solid fa-bag-shopping" data-quantity="0" ></i></a></li>
                     <?php } ?>
@@ -295,7 +295,7 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
         <section class="populaire" id="populaire">
             <?php foreach($products as $product){ ?>
             <article class="box"  data-aos="fade-down-right">
-                <img loading="lazy" src="<?=$product['img_prod']?>" alt="" class="product-img">
+                <img loading="lazy" src="images/<?=$product['img_prod']?>" alt="" class="product-img">
                 <h4 class="product-title"><?=$product['lib_prod']?></h4>
                 <div class="product-price"><?=$product['prix_prod']?><span> Fcfa</span></div>
                 <?php if(isset($_SESSION['utilisateur'])){ ?>
@@ -337,7 +337,7 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
             <section class="partenaire">
             <?php foreach($products1 as $product1){ ?>
                 <article class="box" data-aos="zoom-in-up">
-                    <img loading="lazy" src="<?=$product1['img_prod']?>" alt="" class="product-img">
+                    <img loading="lazy" src="images/<?=$product1['img_prod']?>" alt="" class="product-img">
                     <h5 class="product-title"><?=$product1['lib_prod']?></h5>
                     <div class="product-price"><?=$product1['prix_prod']?><span> Fcfa</span></div>
                     <?php if(isset($_SESSION['utilisateur'])){ ?>

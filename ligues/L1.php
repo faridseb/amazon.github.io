@@ -6,7 +6,7 @@ include "../connect.php";
 $requete = "SELECT * 
             FROM produit
             JOIN categorie ON categorie.id_cat = produit.prod_cat
-            WHERE id_cat = 4";
+            WHERE id_cat = 2";
 
 $resultat = $bdd->query($requete);
 
@@ -50,19 +50,18 @@ if(isset($_SESSION['utilisateur'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <title>Amazon Shop</title>
 </head>
 <body>
 <header>
         <nav class="navbars" >
-            <a href="index.php" class="logo"><span>A</span>MAZON SHOP</a>
+            <a href="../index.php" class="logo"><span>A</span>MAZON SHOP</a>
             <div class="navlinks" >
                 <ul>
-                    <li><i class="fa-solid fa-house" id="maison"></i> <a href="index.php" id="texte"> Acceuil</a></li>
+                    <li><i class="fa-solid fa-house" id="maison"></i> <a href="../index.php" id="texte"> Acceuil</a></li>
                     <li>
                         
                         <div class="dropdown show ">
@@ -132,7 +131,7 @@ if(isset($_SESSION['utilisateur'])){
             <?php if(isset($_SESSION['utilisateur'])){ ?>
                         <li><a href="panier.php"><i class="fa-solid fa-bag-shopping" id="Open" data-quantity="<?=$NBR['total']?>" ></i></a></li>
                     <?php } else { ?>
-                        <li><i class="fa-solid fa-bag-shopping" id="Open" data-quantity="0"></i></li>
+                        <li><i class="fa-solid fa-bag-shopping" id="Open" data-quantity="0" ></i></li>
                     <?php } ?>
             <i class="fa-solid fa-bars" id="icones2"></i>
             
@@ -152,7 +151,7 @@ if(isset($_SESSION['utilisateur'])){
 
             <?php } else {foreach($products2 as $product2){ ?>
             <article class="box" style="background-color:white;">
-                <img loading="lazy" src="../images/<?=$product2['img_prod']?>" alt="" class="product-img">
+                <img loading="lazy" src="<?=$product2['img_prod']?>" alt="" class="product-img">
                 <h4 class="product-title"><?=$product2['lib_prod']?></h4>
                 <div class="product-price"><?=$product2['prix_prod']?><span> Fcfa</span></div>
                 <?php if(isset($_SESSION['utilisateur'])){ ?>
@@ -168,11 +167,11 @@ if(isset($_SESSION['utilisateur'])){
     </header>
 
     <div class="ligue">
-            <h2  data-aos="zoom-in"> <img src="PRL.jpg" alt=""> PREMIERE LEAGUE</h2>
-            <section class="partenaire">
-            <?php foreach ($products as $product) { ?>
+            <h2  data-aos="zoom-in"> <img src="Ligue-1.png" alt=""> LIGUE 1</h2>
+        <section class="partenaire">
+        <?php foreach ($products as $product) { ?>
             <article class="box">
-                <img src="<?=$product['img_prod']?>" alt="" class="product-img">
+                <img src="../images/<?=$product['img_prod']?>" alt="" class="product-img">
                 <h5 class="product-title"><?=$product['lib_prod']?></h5>
                 <div class="product-price"><?=$product['prix_prod']?><span> Fcfa</span></div>
                 <?php if(isset($_SESSION['utilisateur'])){ ?>
@@ -182,7 +181,7 @@ if(isset($_SESSION['utilisateur'])){
                 <?php } ?>
             </article>
             <?php } ?>
-            </section>
+        </section>
     </div>
     <footer>
         <div class="fin">
@@ -214,6 +213,8 @@ if(isset($_SESSION['utilisateur'])){
         <p class="droit">Copyright &copy;2024 Design by <span class="designer">RID</span></p>
     
     </footer>
+
+
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -222,6 +223,6 @@ if(isset($_SESSION['utilisateur'])){
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
 </html>

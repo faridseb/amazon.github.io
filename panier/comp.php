@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 
 $id_com = $_SESSION['utilisateur']['id'];
@@ -91,15 +91,15 @@ if(isset($_POST['right'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="../style2.css">
     <title>Amazon Shop</title>
 </head>
 <body>
     <header>
         <a href="panier.php" style="font-size: 30px;">FINALISATION DE COMMANDE</a>
     </header>
-    <div class="ensemble">
-        <form action="" method="POST">
+    <div class="ensemble" >
+        <form action="" method="POST" style="display:flex;">
             <div class="container2">
                     <table>
                         <thead>
@@ -113,7 +113,7 @@ if(isset($_POST['right'])){
                         <tbody>
                         <?php foreach($products as $product){ ?>
                             <tr>
-                                <td><img src="<?=$product['img_p']?>" alt=""></td>
+                                <td><img src="../images/<?=$product['img_p']?>" alt=""></td>
                                 <td><?=$product['nom_p']?></td>
                                 <td><?=$product['prix_p']?></td>
                                 <td><?=$product['qte_p']?></td>

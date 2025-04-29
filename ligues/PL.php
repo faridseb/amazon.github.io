@@ -53,16 +53,16 @@ if(isset($_SESSION['utilisateur'])){
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Amazon Shop</title>
 </head>
 <body>
 <header>
         <nav class="navbars" >
-            <a href="index.php" class="logo"><span>A</span>MAZON SHOP</a>
+            <a href="../index.php" class="logo"><span>A</span>MAZON SHOP</a>
             <div class="navlinks" >
                 <ul>
-                    <li><i class="fa-solid fa-house" id="maison"></i> <a href="index.php" id="texte"> Acceuil</a></li>
+                    <li><i class="fa-solid fa-house" id="maison"></i> <a href="../index.php" id="texte"> Acceuil</a></li>
                     <li>
                         
                         <div class="dropdown show ">

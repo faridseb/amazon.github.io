@@ -24,7 +24,7 @@ $requete2 = "SELECT * FROM session WHERE prod_id=$id_pro";
 $resultat2 = $bdd->query($requete2);
 
 if($resultat2->rowCount() == 1){
-    header("location:panier.php");
+    header("location: panier/");
 }
 
 
@@ -36,7 +36,7 @@ $requete->execute(
 );
 
 
-header("location:panier.php");
+header("location: panier/");
 }
 
 
