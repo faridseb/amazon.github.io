@@ -9,7 +9,7 @@ try{
         
         if(!empty($email) AND !empty($mdp)){
             if($email == "seboufarid43@gmail.com" && $_POST['mdp']=='admin'){
-                $redirectUrl = 'dashboard.php' ;
+                $redirectUrl = 'admin/dashboard.php' ;
                 echo json_encode([
                     'success' => true,
                     'message' => 'Connexion réussie , Vous etes Admin',

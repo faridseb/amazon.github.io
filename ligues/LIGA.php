@@ -70,12 +70,12 @@ if(isset($_SESSION['utilisateur'])){
                                 <i class="fa-regular fa-futbol"></i>Catalogue
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
-                                <a class="dropdown-item" href="LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
-                                <a class="dropdown-item" href="L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
-                                <a class="dropdown-item" href="SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
-                                <a class="dropdown-item" href="BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
-                                <a class="dropdown-item" href="SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
+                                <a class="dropdown-item" href="../ligues/PL.php"> <img src="../images/PRL.jpg" alt=""  class="PL">Premier league</a>
+                                <a class="dropdown-item" href="../ligues/LIGA.php"><img src="../images/LIGAE.png" alt="" class="PL">LIGA</a>
+                                <a class="dropdown-item" href="../ligues/L1.php"><img src="../images/Ligue-1.png" alt="" class="PL">LIGUE1</a>
+                                <a class="dropdown-item" href="../ligues/SA.php"><img src="../images/SEIE.png" alt="" class="PL">SERIE A</a>
+                                <a class="dropdown-item" href="../ligues/BUND.php"><img src="../images/Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
+                                <a class="dropdown-item" href="../ligues/SEL.php"><img src="../images/euro.png" alt="" class="PL">SELECTION</a>
                             </div>
                         </div>
                     </li>
@@ -88,13 +88,13 @@ if(isset($_SESSION['utilisateur'])){
                             </a>
                             <?php if(!isset($_SESSION['utilisateur'])){ ?>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align: center;">
-                                <a class="dropdown-item" href="login.php"> PAS DE PROFIL </a>
-                                <a class="dropdown-item " href="login.php"> <i class="fa-solid fa-right-to-bracket"></i> Se Connecter</a>
+                                <a class="dropdown-item" href="../login.php"> PAS DE PROFIL </a>
+                                <a class="dropdown-item " href="../login.php"> <i class="fa-solid fa-right-to-bracket"></i> Se Connecter</a>
                             </div>
                             <?php }else{ ?>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align: center;">
-                                <a class="dropdown-item" href="profil.php"><i class="fa-solid fa-user" style="color:black; margin-right:10px; font-size:20px;"></i><?= $_SESSION['utilisateur']['nom'] ?> <?= $_SESSION['utilisateur']['prenom'] ?></a>
-                                <a class="dropdown-item " href="deconnect.php"><i class="fa-solid fa-right-to-bracket" style=" margin-right:10px; font-size:20px;"></i>se Deconnecter</a>
+                                <a class="dropdown-item" href="../profil.php"><i class="fa-solid fa-user" style="color:black; margin-right:10px; font-size:20px;"></i><?= $_SESSION['utilisateur']['nom'] ?> <?= $_SESSION['utilisateur']['prenom'] ?></a>
+                                <a class="dropdown-item " href="../deconnect.php"><i class="fa-solid fa-right-to-bracket" style=" margin-right:10px; font-size:20px;"></i>se Deconnecter</a>
                             </div>
                             <?php } ?>
                         </div>
@@ -112,13 +112,13 @@ if(isset($_SESSION['utilisateur'])){
                             </a>
                             <?php if(!isset($_SESSION['utilisateur'])){ ?>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align: center;">
-                                <a class="dropdown-item" href="login.php"> PAS DE PROFIL </a>
-                                <a class="dropdown-item " href="login.php"> <i class="fa-solid fa-right-to-bracket"></i> Se Connecter</a>
+                                <a class="dropdown-item" href="../login.php"> PAS DE PROFIL </a>
+                                <a class="dropdown-item " href="../login.php"> <i class="fa-solid fa-right-to-bracket"></i> Se Connecter</a>
                             </div>
                             <?php }else{ ?>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align: center;">
-                                <a class="dropdown-item" href="profil.php"><i class="fa-solid fa-user" style="color:black; margin-right:10px; font-size:20px;"></i><?= $_SESSION['utilisateur']['nom'] ?> <?= $_SESSION['utilisateur']['prenom'] ?></a>
-                                <a class="dropdown-item " href="deconnect.php"><i class="fa-solid fa-right-to-bracket" style=" margin-right:10px; font-size:20px;"></i>se Deconnecter</a>
+                                <a class="dropdown-item" href="../profil.php"><i class="fa-solid fa-user" style="color:black; margin-right:10px; font-size:20px;"></i><?= $_SESSION['utilisateur']['nom'] ?> <?= $_SESSION['utilisateur']['prenom'] ?></a>
+                                <a class="dropdown-item " href="../deconnect.php"><i class="fa-solid fa-right-to-bracket" style=" margin-right:10px; font-size:20px;"></i>se Deconnecter</a>
                             </div>
                             <?php } ?>
                         </div>
@@ -137,6 +137,7 @@ if(isset($_SESSION['utilisateur'])){
             <i class="fa-solid fa-bars" id="icones2"></i>
             
         </nav>
+
 
         <div class="search">
             <div>
@@ -164,7 +165,7 @@ if(isset($_SESSION['utilisateur'])){
             <?php }} ?>
             </div>
         </div>
-    </header>
+</header>
     <div class="ligue">
             <h2  data-aos="zoom-in"> <img src="LIGAE.png" alt=""> LIGA</h2>
         <section class="partenaire">
@@ -174,9 +175,9 @@ if(isset($_SESSION['utilisateur'])){
                 <h5 class="product-title"><?=$product['lib_prod']?></h5>
                 <div class="product-price"><?=$product['prix_prod']?><span> Fcfa</span></div>
                 <?php if(isset($_SESSION['utilisateur'])){ ?>
-                    <button class="addcart"><a href="cart.php?id=<?=$product['id_prod']?>">AJOUTER AU PANIER</a></button>
+                    <button class="addcart"><a href="../cart.php?id=<?=$product['id_prod']?>">AJOUTER AU PANIER</a></button>
                 <?php } else { ?>
-                    <button class="addcart"><a href="login.php">AJOUTER AU PANIER</a></button>
+                    <button class="addcart"><a href="../login.php">AJOUTER AU PANIER</a></button>
                 <?php } ?>
             </article>
             <?php } ?>

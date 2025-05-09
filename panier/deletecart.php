@@ -1,6 +1,6 @@
 <?php 
 
-include "connect.php";
+include "../connect.php";
 
 $id = $_GET['id'];
 $id_cl = $_SESSION['utilisateur']['id'];
@@ -12,7 +12,7 @@ $requete->execute(
     array($id_cl,$id)
 );
 
-header("location:panier.php");
+header("location: index.php");
 
 
 

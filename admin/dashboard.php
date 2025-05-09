@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 
 $requete = "SELECT * FROM client ";
@@ -113,7 +113,7 @@ $chiffre = $reponse20->fetch(PDO::FETCH_ASSOC);
                 <a href="produits.php" class="logo"><i class="fa-solid fa-plus"></i>  <span class="respo">VOIR LES PRODUITS</span> </a>
             </div>
             <div class="cont1">
-                <a href="index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>  <span class="respo">RETOUR AU SITE</span> </a>
+                <a href="../index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>  <span class="respo">RETOUR AU SITE</span> </a>
             </div>
         </aside>
         <div class="container">

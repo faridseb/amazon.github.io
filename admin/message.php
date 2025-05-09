@@ -1,11 +1,16 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 
-$requete = "SELECT * FROM client ";
+$requete = "SELECT message.id_mess, client.email, message.lib_mess
+            FROM client
+            JOIN message ON message.clt_id = client.id_clt
+            ";
+
 
 $reponse = $bdd->query($requete);
+
 
 $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
@@ -34,7 +39,7 @@ $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
         margin-left:350px;
     }
     table tr td {
-        padding: 10px 40px;
+        padding: 10px 90px;
     }
     .respo{
         color:white;
@@ -67,29 +72,26 @@ $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
                 <a href="produits.php" class="logo"><i class="fa-solid fa-plus"></i>  <span class="respo">VOIR LES PRODUITS</span> </a>
             </div>
             <div class="cont1">
-                <a href="index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>RETOUR AU SITE</a>
+                <a href="../index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>RETOUR AU SITE</a>
             </div>
         </aside>
+        
         <div class="container">
-        <table>
+            <table>
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nom</th>
-                        <th>Prenom</th>
+                        <th>Message</th>
                         <th>Email</th>
-                        <th>Telephone</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                
                 <?php foreach($utilisateurs as $utilisateur): ?>
                     <tr>
-                    <td><?=$utilisateur['id_clt']?></td>
-                    <td><?=$utilisateur['Nom']?></td>
-                    <td><?=$utilisateur['Prenom']?></td>
+                    <td><?=$utilisateur['id_mess']?></td>
+                    <td><?=$utilisateur['lib_mess']?></td>
                     <td><?=$utilisateur['email']?></td>
-                    <td><?=$utilisateur['Tel']?></td>
                     </tr>
                 <?php endforeach ;?>
                     

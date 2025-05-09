@@ -1,6 +1,6 @@
 <?php
 
-include "connect.php";
+include "../connect.php";
 
 
 
@@ -84,7 +84,7 @@ $utilisateurs = $reponse->fetchAll(PDO::FETCH_ASSOC);
                 <a href="produits.php" class="logo"><i class="fa-solid fa-plus"></i>  <span class="respo">VOIR LES PRODUITS</span> </a>
             </div>
             <div class="cont1">
-                <a href="index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>RETOUR AU SITE</a>
+                <a href="../index.php" class="logo"><i class="fa-solid fa-right-from-bracket"></i>RETOUR AU SITE</a>
             </div>
         </aside>
         <div class="container" style="overflow-x: auto;">

@@ -189,7 +189,7 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
             <a href="#populaire">EXPLORER <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="cole2" data-aos="fade-left">
-            <img src="image1.png" alt="" class="images1">
+            <img src="images/image1.png" alt="" class="images1">
         </div>
     </section>
 
@@ -199,16 +199,16 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src="rs2.webp" alt="First slide">
+                    <img class="d-block w-100" src="images/rs2.webp" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="arsenal.webp" alt="Second slide">
+                    <img class="d-block w-100" src="images/arsenal.webp" alt="Second slide">
                     </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="livv.jpeg" alt="Third slide">
+                    <img class="d-block w-100" src="images/livv.jpeg" alt="Third slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="chelea.webp" alt="Third slide">
+                    <img class="d-block w-100" src="images/chelea.webp" alt="Third slide">
                 </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -248,8 +248,8 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
             </div>
     
     </section>
-    <h2 style="text-align:center;border-bottom: 2px solid black;width: 50%; margin: auto;">NOS CATEGORIES</h2>
-    <div class="populs">
+    <!-- <h2 style="text-align:center;border-bottom: 2px solid black;width: 50%; margin: auto;">NOS CATEGORIES</h2> -->
+    <!-- <div class="populs">
         <div class="box">
             <a href="PL.php">
                 <p>PREMIERE L</p>
@@ -287,7 +287,7 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
                     <img src="euro.png" alt="">
             </a>
         </div>
-    </div>
+    </div> -->
 
     <div class="popul">
         <h2  data-aos="zoom-in">ARTICLE POPULAIRE</h2>

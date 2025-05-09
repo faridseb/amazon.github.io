@@ -23,12 +23,12 @@
                                 <i class="fa-regular fa-futbol"></i>Catalogue
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
-                                <a class="dropdown-item" href="LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
-                                <a class="dropdown-item" href="L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
-                                <a class="dropdown-item" href="SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
-                                <a class="dropdown-item" href="BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
-                                <a class="dropdown-item" href="SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
+                                <a class="dropdown-item" href="ligues/PL.php"> <img src="images/PRL.jpg" alt=""  class="PL">Premier league</a>
+                                <a class="dropdown-item" href="ligues/LIGA.php"><img src="images/LIGAE.png" alt="" class="PL">LIGA</a>
+                                <a class="dropdown-item" href="ligues/L1.php"><img src="images/Ligue-1.png" alt="" class="PL">LIGUE1</a>
+                                <a class="dropdown-item" href="ligues/SA.php"><img src="images/SEIE.png" alt="" class="PL">SERIE A</a>
+                                <a class="dropdown-item" href="ligues/BUND.php"><img src="images/Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
+                                <a class="dropdown-item" href="ligues/SEL.php"><img src="images/euro.png" alt="" class="PL">SELECTION</a>
                             </div>
                         </div>
                     </li>
