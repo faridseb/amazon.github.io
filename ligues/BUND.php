@@ -91,7 +91,7 @@ if(isset($_SESSION['utilisateur'])){
                     </li>
                     <li> <i class="fa-solid fa-phone" id="phone"></i> <a href="#contact" id="texte">  Contacts</a></li>
                     <li>
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                         <div class="dropdown show" id="show">
                             <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa-solid fa-user"></i>
@@ -110,7 +110,7 @@ if(isset($_SESSION['utilisateur'])){
                         </div>
                     </li>
                     <?php if(isset($_SESSION['utilisateur'])){ ?>
-                        <li><a href="panier.php"><i class="fa-solid fa-bag-shopping" data-quantity="<?=$NBR['total']?>" ></i></a></li>
+                        <li><a href="../panier/"><i class="fa-solid fa-bag-shopping" data-quantity="<?=$NBR['total']?>" ></i></a></li>
                     <?php } else { ?>
                         <li><i class="fa-solid fa-bag-shopping" data-quantity="0" ></i></li>
                     <?php } ?>

@@ -99,18 +99,18 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
                                 <i class="fa-regular fa-futbol"></i>Catalogue
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="ligues/PL.php"> <img src="PRL.jpg" alt=""  class="PL">Premier league</a>
-                                <a class="dropdown-item" href="ligues/LIGA.php"><img src="LIGAE.png" alt="" class="PL">LIGA</a>
-                                <a class="dropdown-item" href="ligues/L1.php"><img src="Ligue-1.png" alt="" class="PL">LIGUE1</a>
-                                <a class="dropdown-item" href="ligues/SA.php"><img src="SEIE.png" alt="" class="PL">SERIE A</a>
-                                <a class="dropdown-item" href="ligues/BUND.php"><img src="Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
-                                <a class="dropdown-item" href="ligues/SEL.php"><img src="euro.png" alt="" class="PL">SELECTION</a>
+                                <a class="dropdown-item" href="ligues/PL.php"> <img src="images/PRL.jpg" alt=""  class="PL">Premier league</a>
+                                <a class="dropdown-item" href="ligues/LIGA.php"><img src="images/LIGAE.png" alt="" class="PL">LIGA</a>
+                                <a class="dropdown-item" href="ligues/L1.php"><img src="images/Ligue-1.png" alt="" class="PL">LIGUE1</a>
+                                <a class="dropdown-item" href="ligues/SA.php"><img src="images/SEIE.png" alt="" class="PL">SERIE A</a>
+                                <a class="dropdown-item" href="ligues/BUND.php"><img src="images/Bundesliga.jpg" alt="" class="PL">BUNDESLIGA</a>
+                                <a class="dropdown-item" href="ligues/SEL.php"><img src="images/euro.png" alt="" class="PL">SELECTION</a>
                             </div>
                         </div>
                     </li>
                     <li> <i class="fa-solid fa-phone" id="phone"></i> <a href="#contact" id="texte">Contacts</a></li>
                     <li>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                         <div class="dropdown show" id="show">
                             <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa-solid fa-user"></i>
@@ -227,13 +227,13 @@ $NBR_p = $reponse4->fetch(PDO::FETCH_ASSOC);
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src="mbappe.jpg" alt="First slide">
+                    <img class="d-block w-100" src="images/mbappe.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="lamine.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="images/lamine.jpg" alt="Second slide">
                     </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="haaland.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="images/haaland.jpg" alt="Third slide">
                 </div>
                 
                 </div>

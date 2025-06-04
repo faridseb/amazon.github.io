@@ -18,7 +18,7 @@ header{
     padding: 20px;
     position :sticky;
     top:0;
-    background : black ;
+    background : rgb(0, 0, 0) ;
 }
 header a{
     color :white;
